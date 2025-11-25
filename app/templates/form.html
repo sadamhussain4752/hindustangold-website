@@ -1,0 +1,116 @@
+<div id="overlay">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="btn" id="closeModal" data-bs-dismiss="modal">
+                    <span class="close-icon">✕</span>
+                </button>
+                <form method="POST" class="form" id="request_callback" action="/request-callback-form" name='myform'
+                    style="padding-left:20px; padding-right:20px;">
+                    <p class="text-center" style="font-weight: bold; font-size: 25px; color: black">CONTACT US</p>
+                    <p class="text-center" style="color: gray;">fields marked with an <span style="color: red;">*</span>
+                        are required please</p>
+                    <label style="color: gray; font-weight: bold;">Name <span style="color: red;">*</span></label>
+                    <input type="text" name="full_name" class="form-control" required>
+                    <label style="color: gray; font-weight: bold;">Phone <span style="color: red;">*</span></label>
+                    <input type="text" id="phone" name="phone_number" class="form-control" pattern="[1-9]{1}[0-9]{9}"
+                        maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9+]/g, '');"
+                        title="Enter 10 digit mobile number" required>
+                    <p style="font-weight: bold; color: gray; margin-top: 2%;">Select an option <span
+                            style="color: red;">*</span></p>
+                    <div style="margin-top: -3%;">
+                        <input type="radio" id="r1" value="Sell Gold" name="selectoption" required>
+                        <span style="color: gray;">Sell Gold</span><br>
+                        <input type="radio" id="r2" value="Release Pledged Gold" name="selectoption" required>
+                        <label style="color: gray;margin-bottom: 1%;">Release Pledged Gold</label>
+                    </div>
+                    <div class="input-text-center">
+                        <input type="submit" value="Submit" class="btn mt-2" id="submitForm" style="margin-bottom: 2%;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OTP Modal (Hidden by Default) -->
+<div class="modal fade" id="verifyOtpModal" tabindex="-1" aria-labelledby="verifyOtpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="verifyOtpModalLabel">Verify OTP</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="otpInput" class="form-control" placeholder="Enter OTP" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="verifyOtpBtn">Verify OTP</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+<script>
+    // Show OTP modal before form submission
+    document.getElementById('request_callback').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        // Show the OTP modal
+        var otpModal = new bootstrap.Modal(document.getElementById('verifyOtpModal'));
+        var phoneNumber = document.getElementById('phone').value;
+        console.log('Phone Number:', phoneNumber);
+        fetch('/verify', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+              phone: phoneNumber ,
+            }),
+          }).then(response => response.json())
+            .then(data => {
+              
+              if (data.success) {
+                // Show the OTP modal
+                otpModal.show();
+              } else {
+                alert('Failed to send OTP. Please try again.');
+              }
+            });
+    });
+
+    // Handle OTP verification
+    document.getElementById('verifyOtpBtn').addEventListener('click', function() {
+        var otpValue = document.getElementById('otpInput').value;
+        console.log(otpValue)
+        if (otpValue === '') {
+            alert('Please enter the OTP');
+        } else {
+            // Ideally, you'd verify the OTP via AJAX here with the server
+
+            const otp = document.getElementById('otpInput').value;
+    
+            // Simulate verifying OTP
+            fetch('/verify-otp', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ otp: otp }),
+            }).then(response => response.json())
+              .then(data => {
+                if (data.success) {
+                  alert('Phone number verified!');
+                  document.getElementById('request_callback').submit(); // Submit the form
+                } else {
+                  alert('Invalid OTP. Please try again.');
+                }
+              });
+            
+        }
+    });
+</script>

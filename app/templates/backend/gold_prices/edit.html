@@ -1,0 +1,58 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit Gold Price</h3>
+                    </div>
+                    <form method="post" action="{{ url_for("gold_prices.edit", id=gold_price.id) }}">
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>State</label>
+                                    <select class="form-control" name="state" karat_list>
+                                        <option value="">Select State</option>
+                                        {% for state in states %}
+                                        <option value="{{ state.id }}" {% if state.id == gold_price.state_id %} selected {% endif %} >{{ state.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Carat</label>
+                                    <select class="form-control" name="karat_list" id="karat_list" required>
+                                        <option value="" vt="">Select Carat</option>
+                                        <option value="24" {% if gold_price.carat == "24" %}selected{% endif %}>24 Karat </option>
+                                        <option value="22" {% if gold_price.carat == "22" %}selected{% endif %}>22 Karat </option>
+                                        <option value="21" {% if gold_price.carat == "21" %}selected{% endif %}>21 Karat </option>
+                                        <option value="20" {% if gold_price.carat == "20" %}selected{% endif %}>20 Karat </option>
+                                        <option value="19" {% if gold_price.carat == "19" %}selected{% endif %}>19 Karat </option>
+                                        <option value="18" {% if gold_price.carat == "18" %}selected{% endif %}>18 Karat </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Gold Price</label>
+                                    <p> NOTE: Per Gram</p>
+                                    <input type="number" step="0.01" name="gold_price" value="{{ gold_price.price }}" placeholder="Price per gram"
+                                        class="form-control" id="gold_price" required>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="button" onclick="window.location.href='/admin/list-gold-prices'" class="btn btn-default float-right">Back to list</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>      
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Branch</h3>
+                    </div>
+                    <form method="post" action="{{ url_for('branch.edit', id = branch.id) }}" enctype="multipart/form-data">
+                        <input type="hidden" id="cities_json" value="{{ cities_list }}" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card-body">
+
+                                    <div class="form-group">
+                                        <label>States</label>
+                                        <select class="form-control" name="state_id" id="state_id" required>
+                                            <option value="" vt="">Select State</option>
+                                            {% for state in states%}
+                                            <option value="{{ state.id }}"  {% if state.id == branch.state.id %} selected {% endif %}>{{ state.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <select class="form-control" name="city_id" id="city_id" required>
+                                            <option value="" vt="">Select City</option>
+                                            {% for city in cities %}
+                                            <option value="{{ city.id }}" {% if branch.city.id == city.id %} selected {% endif%} >{{ city.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>                              
+                                    <div class="form-group">
+                                        <label>Pincode</label>
+                                        <input type="number" value="{{ branch.branch.pincode }}" name="pincode" placeholder="Enter Branch Pincode"
+                                            class="form-control" id="pincode" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <textarea type="text"  name="address" placeholder="Enter Branch Address"
+                                            class="form-control" id="address" required="">{{ branch.branch.address }} </textarea>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label>Images</label>
+                                        <!-- <input type="file" name="files[]"  class="form-control" id="email" required=""  multiple/> -->
+                                        <input type="file" class="form-control" name="files" multiple="true" autocomplete="off" >
+                                    </div>      
+                                    <div class="form-group">
+                                        <img class="form-control" style="height: 100%;" src="/{{ branch.imags[0].image_path }}" />
+                                    </div>                 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">                                
+                                    <div class="form-group">
+                                        <label>Branch Name</label>
+                                        <input type="text" name="name" value="{{ branch.branch.name }}" placeholder="Enter Branch Name"
+                                            class="form-control" id="branch" required="">
+                                    </div>  
+                                    <div class="form-group">
+                                        <label>Branch Description</label>
+                                        <textarea type="text" name="description" placeholder="Enter Branch Address"
+                                            class="form-control" value="{{ branch.branch.description }}" id="description" required=""> {{ branch.branch.description }} </textarea>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label>Branch Gmap locations</label>
+                                        <input type="text" name="gmap_location" value="{{ branch.branch.gmap_link }}" placeholder="Enter Branch Gmap locations"
+                                            class="form-control" id="gmap_location" required="">
+                                    </div>                                                             
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="number" name="contact_no" placeholder="Enter Branch Phone" value="{{ branch.branch.contact_no }}"
+                                            class="form-control" id="contact_no" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="email" placeholder="Enter Branch Email" value="{{ branch.branch.email }}"
+                                            class="form-control" id="email" required="" />
+                                    </div>
+                                   
+                                   
+                                    <div class="form-group">
+                                        <label>Map Location</label>
+                                        
+                                        <!-- <input type="file" name="files[]"  class="form-control" id="email" required=""  multiple/> -->
+                                        <input type="file" class="form-control" name="map_location" multiple="true" autocomplete="off" >
+                                    </div>
+                                    <div class="form-group">
+                                        <img class="form-control" style="height: 100%;" src="/{{ branch.imags[1].image_path }}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="button" onclick="window.location.href='/admin/location/branch/datatable'" class="btn btn-default float-right">Back to list</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>    
+</div>
+
+
+{% endblock %}

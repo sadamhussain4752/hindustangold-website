@@ -1,0 +1,76 @@
+{% extends "home.html" %} {% block main %}
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">RELEASE PLEDGED GOLD</h1>
+        <section id="steps">
+
+            <div class="container">
+                <div id="carouselExampleDark" class="carousel2 carousel-dark slide" >
+                    
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p class="para text-center">Do you have pledged Gold in Bank /Pawn Brokers or Private Banks?</p>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="flex-img-box">
+                                <img src="{{ url_for('static', filename='img/question.jpg') }}" style="width: 150px;" alt="Step 1" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-md-12"><br><br>
+        <img src="{{ url_for('static', filename='img/releasepledgedgold.webp') }}" alt="Gold buyer">
+    </div>
+   <!-- <div class="video mt-5">
+        <video width="100%" height="100%" controls>
+            <source src="{{ url_for('static', filename='img/youtube_video.mp4') }}" type="video/mp4">
+            <source src="{{ url_for('static', filename='img/youtube_video.ogg') }}" type="video/ogg">
+        </video>
+    </div>-->
+    <p class="para">We are <a href="https://hindustangoldcompany.com/gold-buyers/">gold buyers</a> and we can help you <strong>RELEASE PLEDGED GOLD</strong> from any Bank/Pawn Broker/Private Bank, after which our team would help you reassess the Gold Jewelry and get you the <strong>CASH FOR GOLD</strong>.</p>
+    <p class="para">Hindustan Gold Company is one of the <strong>TOP GOLD JEWELRY BUYER COMPANY IN BANGALORE.</strong> Walk-IN to our nearest branch to validate your gold jewellery before you SELL GOLD. Get the right weight for your gold jewelry for the right price after
+        evaluating its purity. Our team maintains absolute clarity in the entire process to sell gold. Sell GOLD only to <strong>TRUSTED <a href="https://hindustangoldcompany.com/gold-buyers/">GOLD BUYERS</a></strong> near you.</p>
+
+    <p class="para"> Maximum times the people are failed to release their pledged gold because of the high-interest rates and are bound to pay the needless interest rates. It sometimes crosses the value of double the gold price. Hindustan Gold Company helps customers release their gold loans and other jewels from banks, pawn shops, and financiers and buy back the gold at the best price of anybody else. 
+    Customers can claim their promised gold by visiting our Hindustan Gold Company branches. The benefit of releasing the pledged gold for selling is that you can collect <b>RIGHT CASH</b> before it is delayed and the interest gets rises. At Hindustan Gold Company, we release and buy the gold in our jewelry so that our valued customers can balance the immediate monetary value of unused gold jewels by selling them at the prominent market price. Customers may sell any amount of old, used, or damaged gold, silver, or other jewelry with us. If you have any kind of silver or gold jewels for sale, you can visit one of our nearest branches. <b><a href="/">Our goal is to provide customers an honest and transparent service.</a></b></p>
+    <p class="para">Our experts verify the Purity of the gold With the Best German Technology Machines</p>
+    <p class="para"><b>Our Executives of the Hindustan Gold Company will collect the pledged details from the customer and provide an approximate valuation for the gold that would be disclosed based on the customer-provided details. When people buy gold indicates their hard work. Buying gold is not an easy task for everyone, and people save their every money to invest in gold. It’s been a practice amongst people in India to pledge their jewels for gathering their financial needs when there is no other option left.</b></p>
+
+    <div class="row"><br>
+    <p class="para">   
+    <ul class="list-items"><b>DOCUMENTS REQUIRED TO RELEASE PLEDGED GOLD</b>
+        <li>A valid ID proof</li>
+        <li>Latest address proof with valid</li>
+        <li>Passport Size photo</li>
+        <li>Original receipt of pledged gold or proof of pledged gold with pawn brokers/private financiers</li>
+    </ul>
+    </p>
+    </div>
+
+  </div>
+  <script>
+    
+    $(document).ready(function(){
+        
+            $(function () {
+            //update Meta Tag in Header
+            document.title= 'Release Pledged Gold - Hindustan Gold Company';
+            
+            document.querySelector("[name='description']").remove();
+
+            let metatag = document.createElement('meta');
+            metatag.setAttribute('name', 'description');
+            metatag.content = 'We can help you RELEASE PLEDGED GOLD from any Bank/Pawn Broker/Private Bank, after which our team would help you reassess the Gold Jewelry and get you the CASH FOR GOLD.';
+            document.getElementsByTagName('head')[0].appendChild(metatag);
+            
+        });
+
+});
+</script>
+</div>
+{% endblock %}

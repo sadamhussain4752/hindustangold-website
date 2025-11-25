@@ -1,0 +1,153 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Meta Information</h3>
+                    </div>
+                    <form method="post" action="{{ url_for("seo.create") }}">
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Page</label>
+                                    <select class="form-control" name="page" id="page" required>
+                                        <option value="" vt="">Select Page</option>
+                                        <option value="home" vt="24"> Home </option>
+                                        <option value="about_us" vt="22"> About Us </option>
+                                        <option value="branches" vt="21"> Branches </option>
+                                        <option value="individual_branch" vt="20"> Individual Branch </option>
+                                        <option value="services" vt="19"> Services </option>
+                                        <option value="individual_services" vt="18"> Individual Services </option>
+                                        <option value="blog" vt="17"> Blog </option>
+                                        <option value="individual_blog" vt="16"> Individual Blog </option>
+                                        <option value="contact_us" vt="15"> Contact Us </option>
+                                        <option value="careers" vt="14"> Careers </option>
+                                        <option value="appy_careers" vt="13"> Apply Careers </option>
+                                        <option value="terms" vt="12"> Terms </option>
+                                        <option value="check_gold_price" vt="11"> Check Gold Price </option>
+                                        <option value="gold_buyers" vt="10"> Gold Buyers</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" id="branch_form" style="display: none;">
+                                    <label>Branch</label>
+                                    <select class="form-control" name="branch_page" id="branch_page">
+                                        <option value="" vt="">Select Branch</option>
+                                        {% for branch in branches %}
+                                        <option value="{{ branch.name }}" vt="">{{ branch.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group" id="blog_form" style="display: none;">
+                                    <label>Blogs Topic</label>
+                                    <select class="form-control" name="blog_page" id="blog_page">
+                                        <option value="" vt="">Select Blog</option>
+                                        {% for blog in in_blog %}
+                                        <option value="{{ blog }}" vt="">{{ blog }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group" id="service_form" style="display: none;">
+                                    <label>Services Topic</label>
+                                    <select class="form-control" name="service_page" id="service_page">
+                                        <option value="" vt="">Select Services</option>
+                                        {% for service in in_services %}
+                                        <option value="{{ service }}" vt="">{{ service }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input class="form-control" type="text" name="title" id="title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Keywords</label>
+                                    <textarea class="form-control" type="text" rows="4" name="keywords" id="keywords"  required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control" type="text" name="description" id="description" rows="6" required></textarea>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="">Meta Info list</h3>
+                            <b> Note: only todays meta-info will showed here</b>
+
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <table class="table table-bordered table-hover dataTable dtr-inline" id="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Page
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Keywords
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for item in list_of_meta %}
+                                <tr>
+                                    <td>
+                                        {{ item.page}}
+                                    </td>
+                                    <td>
+                                        {{ item.title}}
+                                    </td>
+                                    <td>
+                                        {{ item.keywords }}
+                                    </td>
+                                    <td>
+                                        {{ item.description}}
+
+                                    </td>
+                                    <td>
+                                        <a href="{{ url_for("seo.edit", id=item.id) }}"><i class="fa fa-edit"></i>Edit</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

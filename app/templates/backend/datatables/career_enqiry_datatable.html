@@ -1,0 +1,100 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <h3 class="">ContactUs list</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-bordered table-hover dataTable dtr-inline" id="table" data-page-length='50'>
+                <thead>
+                    <tr>
+                        <th>
+                            SL.No
+                        </th>
+                        <th>
+                            Full Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Phone Number
+                        </th>                        
+                        <th>
+                            Message
+                        </th>
+                        <th>
+                            Resume
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in list_of_contacts.items %}
+                    <tr>
+                        <td>
+                            {{ item.id}}
+                        </td>
+                        <td>
+                            {{ item.name}}
+                        </td>
+                        <td>
+                            {{ item.email}}
+                        </td>
+                        <td>
+                            {{ item.phone_no}}
+
+                        </td>                    
+                        <td>
+                            {{ item.cover_letter}}
+                        </td>
+                        <td>
+                            <a class="fa fa-download" href="{{ url_for('customers.download_resume', filename=item.resume) }}"
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <!-- Pagination Links-->
+        <div class="text-right">
+            <a href="{{ url_for('customers.career_enquiry', page=list_of_contacts.prev_num) }}" class="btn btn-outline-dark 
+       {% if list_of_contacts.page == 1 %}disabled{% endif %}">
+                &laquo;
+            </a>
+            <!-- Loop through the number of pages to display a link for each-->
+            {% for page_num in list_of_contacts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+            <!-- Check for the active page and set the link to "Active"-->
+            {% if list_of_contacts.page == page_num %}
+            <a href="{{ url_for('customers.career_enquiry', page=page_num) }}" class="btn btn-dark">
+                {{ page_num }}
+            </a>
+            {% else %}
+            <a href="{{ url_for('customers.career_enquiry', page=page_num) }}" class="btn btn-outline-dark">
+                {{ page_num }}
+            </a>
+            {% endif %}
+            {% else %}
+            ...
+            {% endif %}
+            {% endfor %}
+            <a href="{{ url_for('customers.career_enquiry', page=list_of_contacts.next_num) }}" class="btn btn-outline-dark 
+       {% if list_of_contacts.page == list_of_contacts.pages %}disabled{% endif %}">
+                &raquo;
+            </a>
+        </div>
+        <p class="text-right mt-3">
+            Showing page {{ list_of_contacts.page }} of {{ list_of_contacts.pages }}
+        </p>
+    </div>
+</div>
+
+{% endblock %}

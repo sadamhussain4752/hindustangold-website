@@ -1,0 +1,35 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header" >
+                        <h3 class="card-title">Add State</h3>
+                    </div>
+                    <form method="post" action="{{ url_for('state.edit', id=state.id) }}">
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>State</label>
+                                    <input type="text" value="{{ state.name }}" name="state" placeholder="Enter State Name" class="form-control"
+                                        id="state" required="">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary"
+                                >Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

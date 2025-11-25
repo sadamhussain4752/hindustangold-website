@@ -1,0 +1,192 @@
+{% extends "home.html" %} {% block main %}
+
+<section id="Home9" class="services">
+
+    
+<a href="https://wa.me/+919741637635" class="" target="_blank">
+    <div class="float">
+        <i class="fab fa-whatsapp my-float" target="_blank" rel="noopener noreferrer"></i>
+    </div>
+    <h1 class="text-center float1">
+        Need Help?
+    </h1>
+  </a>
+
+    <div class="container" style="position:relative;z-index: 1;">
+        <div class="row">
+            <div class="col-md-6 col-lg-6">
+                <h1 class="heading">Our Services</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="steps">
+    <h2 class="section-heading text-center mt-0">Sell Your Gold With Ease</h2>
+    <div class="container">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="badge bg-danger">Step 1</span>
+                            <h3>Walk-in with your Gold</h3>
+                            <p>If you want to Sell Gold, walk in to our nearest  <a href=/branches/>branch.</a>
+                             If you want us to help you release your pledged gold, walk-in with the pledge slip and we are here to help you release your Gold.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" flex-img-box">
+                                <img src="{{ url_for('static', filename='img/step1.webp') }}" alt="Cash for gold near me" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="badge bg-danger">Step 2</span>
+                            <h3>Purity Check</h3>
+                            <p>Hindustan Gold Company is only <a href="/">Gold Buyers</a> Company that gives you the best price for the Gold based on its purity. Check purity of your GOLD for FREE. We are transparent on valuation of your GOLD purity. We use latest technology
+                                machine that gives 100% purity for your gold ornaments.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" flex-img-box">
+                                <img src="{{ url_for('static', filename='img/step2.webp') }}" alt="Step 2" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="badge bg-danger">Step 3</span>
+                            <h3>Sell Gold at Online Price</h3>
+                            <p>Sell Gold to get Instant Cash. Hindustan Gold Company helps you get the best Online price that, Market can never match. We understand the needs and cater you. We have won the trust of millions of customers during our 20 years
+                                journey.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" flex-img-box">
+                                <img src="{{ url_for('static', filename='img/step3.webp') }}" alt="Step 3" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="services" class="rel services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="services-item">
+                    <img src="{{ url_for('static', filename='img/sell-gold.png') }}" alt="Buy Gold | Platinum | Diamond" />
+                    <h3 style="font-size: 20px;">Buy Gold | Platinum | Diamond</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="services-item">
+                    <img src="{{ url_for('static', filename='img/releasepledgedgold.png') }}" alt="Release Pledged Gold" />
+                    <h3>Release Pledged Gold <br></h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="services-item">
+                    <img src="{{ url_for('static', filename='img/door-to-door.png') }}" alt="Door step service" />
+                    <h3>Door Step Service<br></h3>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default check_price_btn" data-title="Gold" data-bs-toggle="modal" data-bs-target="#exampleModal" name="button">Calculate Gold Price</button>
+    </div>
+</section>
+<section id="view_services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h6 class="h6"><img src="{{ url_for('static', filename='img/best-gold.jpg') }}" class="img6" alt="Best Gold Buyers "> BEST GOLD BUYERS</h6>
+                <p class="para2 ">We evaluate your Gold with advance techniques and Buy your Gold, paying cash immediately as per online price. You get best service when you walk in with your Gold jewellery. Hindustan Gold Company can give you best price for your OLD GOLD,
+                    that none of them can match in Industry. </p>
+                <a href="{{url_for( 'services.selected_service', service_name='best-gold' )}} " class="h6 ">View More</a>
+ 
+            </div>
+            <div class="col-md-4 ">
+                <span><h6 class="h6 "><img src="{{ url_for( 'static', filename='img/releasepledgedgold.png' ) }} " class="img6" alt="Release Pledged Gold">RELEASE PLEDGED GOLD</h6>
+                </span>
+                <p class="para2"> Do you have pledged Gold in Bank /Pawn Brokers or Private Banks? Are you not able to pay heavy interest? Call us to help you. We can release your Gold and get you the best price. You can also sell gold to us at current market price. Check
+                    the process, by clicking below</p>
+                <a href="{{url_for('services.selected_service', service_name='release-pledged-gold' )}}" class="h6">View More</a>
+            </div>
+
+
+            <div class="col-md-4">
+                <h6 class="h6"><img src="{{ url_for( 'static', filename='img/sell_gold.jpg' ) }} " class="img6" alt="Sell Gold">SELL GOLD</h6>
+                <p class="para2">Hindustan Gold Company is transparent when it comes to sell gold at our branches. We follow the same process across branches and ensure earn customer satisfaction. Sell you Gold at your expectations. When you sell gold, we follow the process.
+                    For More information click button below.</p>
+                <a href="{{url_for('services.selected_service', service_name='sell-gold' )}}" class="h6">View More</a>
+            </div>
+
+            <div class="col-md-4 mt-5">
+                <h6 class="h6"><img src="{{ url_for( 'static', filename='img/door_step_gold.jpg' ) }} " class="img6" alt="door step gold">Doorstep GOLD Buyers</h6>
+                <p class="para2">Our goal is to provide convinience to the people during their emergencies. We have specialized team to evaluate your Gold and help you to sell at fair price with no hassels.Hindustan Gold Company understands the people and equiped to serve
+                    the people. Check '<a href="/terms/">Terms and conditions</a>'.</p>
+                <a href="/terms/" class="h6">View More</a>
+            </div>
+            <div class="col-md-4 mt-5">
+                <h6 class="h6"><img src="{{ url_for( 'static', filename='img/trusted_gold.jpg' ) }} " class="img6" alt="trusted gold">VALUE FOR GOLD </h6>
+                <p class="para2">Do you know the value of your Gold Worth? We as team ensure and advise your Gold Valuation first. That makes you the best market players, Being the best Buyers is because of our transperency is showing our valuable customers the worth
+                    they hold. For More information click below. </p>
+                <a href="{{url_for('services.selected_service', service_name='value-for-gold' )}}" class="h6">View More</a>
+
+            </div>
+            <div class="col-md-4 mt-5">
+                <h6 class="h6"><img src="{{ url_for( 'static', filename='img/gold.png' ) }} " class="img6" alt="gold bricks">ONLINE GOLD PRICE</h6>
+                <p class="para2">Are you looking for the <a href="/check-gold-price/">RIGHT GOLD Price?</a> Use our calculator service to check the gold price. It gives the apporoximate cost you can seek when you are planning to sell Gold. Compare the price around market and we as team commit to match
+                    it, as much as possible</p>
+                <a href="/check-gold-price/" class="h6">View More</a>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<section id="need-franchise">
+    <div class="overlay">
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="row">
+                    <div class="col-md-6 offset-md-1">
+                        <h2 class="section-heading">Need Franchise of <small>HINDUSTAN GOLD COMPANY</small></h2>
+                        <ul class="list-items">
+                          <li>Benefits
+                            <ul>
+                            <li>A brand that is trusted</li>
+                            <li>Ease to Earn</li>
+                            <li>Complete Infrastructure Guidance</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+{% endblock %}

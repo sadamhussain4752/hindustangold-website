@@ -1,0 +1,119 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Gold Prices</h3>
+                    </div>
+                    <form method="post" action="{{ url_for("gold_prices.create") }}">
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>State</label>
+                                    <select class="form-control" name="state" karat_list>
+                                        <option value="">Select State</option>
+                                        {% for state in states %}
+                                        <option value="{{ state.id }}">{{ state.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Carat</label>
+                                    <select class="form-control" name="karat_list" id="karat_list" required>
+                                        <option value="" vt="">Select Carat</option>
+                                        <option value="24" vt="24">24 Karat </option>
+                                        <option value="22" vt="22">22 Karat </option>
+                                        <option value="21" vt="21">21 Karat </option>
+                                        <option value="20" vt="20">20 Karat </option>
+                                        <option value="19" vt="19">19 Karat </option>
+                                        <option value="18" vt="18">18 Karat </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Gold Price</label>
+                                    <p> NOTE: Per Gram</p>
+                                    <input type="number" step="0.01" name="gold_price" placeholder="Price per gram"
+                                        class="form-control" id="gold_price" required>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="">Gold Price list</h3>
+                            <b> Note: only todays prices will showed here</b>
+                            <br>
+                            <b> Please add per gram value only</b>
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <table class="table table-bordered table-hover dataTable dtr-inline" id="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        State
+                                    </th>
+                                    <th>
+                                        Carat
+                                    </th>
+                                    <th>
+                                        Rs / Per Gram
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for item in gold_prices %}
+                                <tr>
+                                    <td>
+                                        {{ item.state.name}}
+                                    </td>
+                                    <td>
+                                        {{ item.carat}}K
+                                    </td>
+                                    <td>
+                                        {{ item.price }}
+                                    </td>
+                                    <td>
+                                        {{ item.date.strftime('%d-%m-%Y')}}
+
+                                    </td>
+                                    <td>
+                                        <a href="{{ url_for("gold_prices.edit", id=item.id) }}"><i class="fa fa-edit"></i>Edit</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% block nav %}
+
+<ul class="navbar-nav mr-auto mt-lg-0">
+    <li class="nav-item">
+        <a class="nav-link active" href="/">Home </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/about/">About Us </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/branches/">Branches</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/services/">Services</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/careers/">Careers</a>
+    </li>
+
+
+      <li class="dropdown" style="margin-left:15px;margin-right:15px;font-size: 18px;">
+       <span class="nav-link" id='blogText' style="color: white;">Blogs</span>
+        <ul class="submenu">
+            <li><a href="/blog/" >New Updates</a></li>
+          <li class="dropdown">
+            <a href="/more-blogs/">More Blogs </a>
+            <ul class="sub-submenu">
+              <li><a href="/blog/release-pledged-gold-near-me/">Pledged Gold</a></li>
+              <li><a href="/blog/gold-buyers-near-me/">Gold Buyers</a></li>
+              <li><a href="/blog/money-for-gold/">Money for Gold</a></li>
+              <li><a href="/blog/sell-gold-for-cash/">Sell Gold</a></li>
+              <li><a href="/blog/cash-for-gold-near-me/">Cash for Gold</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+      </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link" href="/contact/">Contact Us</a>
+    </li>
+
+</ul>
+
+{#{% include 'form.html' %}#}
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header" >
+                        <h3 class="card-title">Add State</h3>
+                    </div>
+                    <form method="post" action="{{ url_for('state.create') }}">
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>State</label>
+                                    <input type="text" name="state" placeholder="Enter State Name" class="form-control"
+                                        id="state" required="">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary"
+                                >Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="">State list</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <table class="table-bordered " id="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            SL.No
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% for item in states %}
+                                    <tr>
+                                        <td>
+                                            {{ item.id}}
+                                        </td>
+                                        <td>
+                                            {{ item.name}}
+                                        </td>
+                                        <td>
+                                            <a href="{{ url_for("state.edit", id=item.id) }}"><i class="fa fa-edit"></i>Edit</a>
+                                            <!-- <a href="{{ url_for("state.delete", id=item.id) }}" onclick="return confirm('Are You sure you want to Delete this? ')"><i class="fa fa-trash-o"></i> Delete</a> -->
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

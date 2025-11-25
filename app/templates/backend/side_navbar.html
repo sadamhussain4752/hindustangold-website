@@ -1,0 +1,136 @@
+<nav class="mt-2">
+    <ul id="side-nav-js" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview">
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-cogs"></i>
+                <p>
+                    Set Gold Prices
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="/admin/add-gold-prices" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Gold Price</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/list-gold-prices" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Gold Price List</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    Customer Data
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="/admin/contact-us-list" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>ContactUs List</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/request-forms-list" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>CallBack List</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    Location
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ url_for('state.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add State</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('city.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add City</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('branch.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Branch</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('branch.datatable') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List Branchs</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    SEO
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ url_for('seo.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Meta</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('seo.list') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List Meta</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    Careers
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ url_for('careers.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Vacancies</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('careers.list') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List Vacancies</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

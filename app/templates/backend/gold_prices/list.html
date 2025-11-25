@@ -1,0 +1,152 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h3 class="">Filters</h3>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    
+                        <form class="row" method="post" action="{{ url_for("gold_prices.list") }}">
+                            <div class=" col-md-3">
+                                <div class="form-group">
+                                    <select class="form-control" name="state" required>
+                                        <option value="">Select State</option>
+                                        {% for state in states %}
+                                        <option value="{{ state.id }}">{{ state.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" col-md-3">
+                                <div class="form-group">
+                                    <select class="form-control" name="karat_list" id="karat_list" required>
+                                        <option value="" vt="">Select Carat</option>
+                                        <option value="24" vt="24">24 Karat </option>
+                                        <option value="22" vt="22">22 Karat </option>
+                                        <option value="21" vt="21">21 Karat </option>
+                                        <option value="20" vt="20">20 Karat </option>
+                                        <option value="19" vt="19">19 Karat </option>
+                                        <option value="18" vt="18">18 Karat </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" col-md-3">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" name="date" id="date" />
+                                </div>
+                            </div>
+
+                            <div class=" col-md-3">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                </div>
+                <!-- <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h3 class="">Price list</h3>
+                    </div>
+                </div>
+                <div class="card-body ">
+                    <table class="table table-bordered table-hover dataTable dtr-inline" id="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    State
+                                </th>
+                                <th>
+                                    Carat
+                                </th>
+                                <th>
+                                    Rs / Per Gram
+                                </th>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for item in gold_prices.items %}
+                            <tr>
+                                <td>
+                                    {{ item.state.name}}
+                                </td>
+                                <td>
+                                    {{ item.carat}}K
+                                </td>
+                                <td>
+                                    {{ item.price }} Rs
+                                </td>
+                                <td>
+                                    {{ item.date.strftime('%d-%m-%Y')}}
+
+                                </td>
+                                <td>
+                                    <a href="{{ url_for("gold_prices.edit", id=item.id) }}"><i class="fa fa-edit"></i>Edit</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <!-- Pagination Links-->
+                    <div class="text-right">
+                        <a href="{{ url_for('gold_prices.list', page=gold_prices.prev_num) }}" class="btn btn-outline-dark 
+                   {% if gold_prices.page == 1 %}disabled{% endif %}">
+                            &laquo;
+                        </a>
+                        <!-- Loop through the number of pages to display a link for each-->
+                        {% for page_num in gold_prices.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                        {% if page_num %}
+                        <!-- Check for the active page and set the link to "Active"-->
+                        {% if gold_prices.page == page_num %}
+                        <a href="{{ url_for('gold_prices.list', page=page_num) }}" class="btn btn-dark">
+                            {{ page_num }}
+                        </a>
+                        {% else %}
+                        <a href="{{ url_for('gold_prices.list', page=page_num) }}" class="btn btn-outline-dark">
+                            {{ page_num }}
+                        </a>
+                        {% endif %}
+                        {% else %}
+                        ...
+                        {% endif %}
+                        {% endfor %}
+                        <a href="{{ url_for('gold_prices.list', page=gold_prices.next_num) }}" class="btn btn-outline-dark 
+                   {% if gold_prices.page == gold_prices.pages %}disabled{% endif %}">
+                            &raquo;
+                        </a>
+                    </div>
+                    <p class="text-right mt-3">
+                        Showing page {{ gold_prices.page }} of {{ gold_prices.pages }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

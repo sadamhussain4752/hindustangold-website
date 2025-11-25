@@ -1,0 +1,41 @@
+sudo nano /etc/systemd/system/gunicorn.service
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/home/ubuntu/hindustangold
+
+ExecStart=/usr/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/application.sock wsgi:app
+
+[Install]
+WantedBy=multi-user.target
+
+
+## nginx part 
+
+
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/hindustangoldcompany.com.conf
+
+sudo nano /etc/nginx/sites-available/hindustangoldcompany.com.conf
+
+server {
+    listen 80;
+    server_name 3.111.168.101;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/application.sock;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/hindustangoldcompany.com.conf /etc/nginx/sites-enabled/
+
+sudo ln -f -s /etc/nginx/sites-available/hindustangoldcompany.com.conf /etc/nginx/sites-enabled/
+
+
+listen 80 default_server;
+listen [::]:80 default_server;

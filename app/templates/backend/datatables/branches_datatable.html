@@ -1,0 +1,108 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <h3 class="">Branches list</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-bordered table-hover dataTable dtr-inline" id="table" data-page-length='50'>
+                <thead>
+                    <tr>
+                        <th>
+                            SL.No
+                        </th>
+                        <th>
+                            Branch Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Phone Number
+                        </th>
+                        <th>
+                            Address/ City / State
+                        </th>
+                       
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in branches.items %}
+                    <tr>
+                        <td>
+                            {{ item.id}}
+                        </td>
+                        <td>
+                            {{ item.branch.name }}
+                        </td>
+                        <td>
+                            {{ item.branch.description }}
+                        </td>
+                        <td>
+                            {{ item.branch.email}}
+                        </td>
+                        <td>
+                            {{ item.branch.contact_no}}
+
+                        </td>
+                        <td>
+                            {{ item.branch.address}}  {{ item.branch.pincde}} {{ item.city.name}}  {{ item.state.name }} 
+                        </td>
+                      
+                        <td>
+                           <a href="{{ url_for("branch.edit", id=item.id)  }}" class="fa fa-edit"></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <!-- Pagination Links-->
+        <div class="text-right">
+            <a href="{{ url_for('branch.datatable', page=branches.prev_num) }}" class="btn btn-outline-dark 
+       {% if branches.page == 1 %}disabled{% endif %}">
+                &laquo;
+            </a>
+            <!-- Loop through the number of pages to display a link for each-->
+            {% for page_num in branches.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+            <!-- Check for the active page and set the link to "Active"-->
+            {% if branches.page == page_num %}
+            <a href="{{ url_for('branch.datatable', page=page_num) }}" class="btn btn-dark">
+                {{ page_num }}
+            </a>
+            {% else %}
+            <a href="{{ url_for('branch.datatable', page=page_num) }}" class="btn btn-outline-dark">
+                {{ page_num }}
+            </a>
+            {% endif %}
+            {% else %}
+            ...
+            {% endif %}
+            {% endfor %}
+            <a href="{{ url_for('branch.datatable', page=branches.next_num) }}" class="btn btn-outline-dark 
+       {% if branches.page == branches.pages %}disabled{% endif %}">
+                &raquo;
+            </a>
+        </div>
+        <p class="text-right mt-3">
+            Showing page {{ branches.page }} of {{ branches.pages }}
+        </p>
+    </div>
+</div>
+
+{% endblock %}

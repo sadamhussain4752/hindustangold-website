@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trusted Gold Buyers in Bangalore | Sell Gold for Cash in Bangalore | 8088550033</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="{{meta_data.keywords}}" />
+    <meta name="description" content="{{meta_data.description}}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="twitter:card" content="summary Good image" />
+    <meta name="twitter:site" content="@hindustangoldc1" />
+    <meta name="twitter:title" content="Hindustan Gold Company | 8088550033" />
+    <meta
+      name="twitter:description"
+      content="Hindustan Gold Company is the most reputed gold buyers in the market. We offer the ground-breaking concept of buying gold at the current online price. All the branches of Hindustan Gold Company are trained and help customers to get best price on their old gold jewellery."
+    />
+    <meta name="twitter:creator" content="@hindustan gold company" />
+    <meta
+      name="twitter:image:src"
+      content="https://res.cloudinary.com/hindutan-gold-company/image/upload/f_auto,q_auto/v1588561171/hgc_logo_gtfcyd.png"
+    />
+    <meta name="twitter:domain" content="https://hindustangoldcompany.com/" />
+    <!-- old code -->
+    <!-- <link rel="canonical" href="{{ cur_url }}"> -->
+
+    <!-- New code 05-04-2024 start -->
+
+    <meta property="og:title" content="best gold buying company in bangalore" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hindustangoldcompany.com/" />
+    <meta
+      property="og:image"
+      content="https://hindustangoldcompany.com/static/img/slider62.webp"
+    />
+
+    <!-- New code 05-04-2024 end -->
+
+    <!-- new code -->
+    <link rel="canonical" href="https://hindustangoldcompany.com/" />
+    <link
+      rel="alternate"
+      hreflang="en-IN"
+      href="https://hindustangoldcompany.com/"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+  </head>
+
+  <body>
+    {% include 'common/header.html' %} {% block main %} {% endblock %} {%
+    include 'common/footer.html'%}
+
+    <!-- OTP Modal (Hidden by Default) -->
+<div class="modal fade" id="verifyOtpModal" tabindex="-1" aria-labelledby="verifyOtpModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="verifyOtpModalLabel">Verify OTP</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <input type="text" id="otpInput" class="form-control" placeholder="Enter OTP" required>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="verifyOtpBtn">Verify OTP</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150349996-1"
+    ></script>
+    <script>
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      (window.dataLayer = window.dataLayer || []),
+        gtag("js", new Date()),
+        gtag("config", "UA-150349996-1");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    {% block scripts %} {% endblock %}
+    <script>
+      $(document).ready(function () {
+        $(".check_price_btn").click(function () {
+          var type = $(this).attr("data-title");
+          $(".check_price").attr("data-title", type);
+          $(".modal-title").text("Today's " + type + " Price");
+        });
+        $(".check_price").click(function () {
+          var type = $(this).attr("data-title");
+          $(this).text("... Loading");
+          $.get("demo_test.asp", function (data, status) {
+            $(this).text("Check price");
+            $(".price-details").show();
+            $(".price-details").text("Rs. " + data.price + " / Grams");
+          });
+        });
+
+        //use .one to ensure this only happens once
+
+        $(".btn-play").on("click", function (ev) {
+          $("iframe")[0].src += "&autoplay=1";
+          ev.preventDefault();
+        });
+        $(".modal-close").click(function () {
+          $("iframe").attr("src", $("iframe").attr("data-frame"));
+        });
+        $(".close-icon").click(function () {
+          $("#Request_callback").removeClass("show");
+        });
+
+        // $(document).ready(function() {
+        $(".request-callback").hover(function () {
+          // ev.preventDefault();
+          $("#Request_callback").addClass("show");
+        });
+        // });
+
+        const d = new Date();
+        $(".date-field").text(d);
+
+        if ($("#Home").hasClass("main-page")) {
+          ev.preventDefault();
+          $("#Request_callback").addClass("show");
+        }
+      });
+
+      $(window).scroll(function () {
+        if ($(window).scrollTop() >= 300) {
+          $(".fixed-top").addClass("fixed-header");
+        } else {
+          $(".fixed-top").removeClass("fixed-header");
+        }
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#mobile_no").on("keypress", function (e) {
+          var t = $(this),
+            a = new RegExp("^[0-9\b]+$"),
+            l = String.fromCharCode(e.charCode ? e.charCode : e.which);
+          return 9 < t.val().length
+            ? (e.preventDefault(), !1)
+            : e.charCode < 54 && 47 < e.charCode
+            ? 0 !== t.val().length || (e.preventDefault(), !1)
+            : !!a.test(l) || (e.preventDefault(), !1);
+        }),
+          $("#request_callback_no").on("keypress", function (e) {
+            var t = $(this),
+              a = new RegExp("^[0-9\b]+$"),
+              l = String.fromCharCode(e.charCode ? e.charCode : e.which);
+            return 9 < t.val().length
+              ? (e.preventDefault(), !1)
+              : e.charCode < 54 && 47 < e.charCode
+              ? 0 !== t.val().length || (e.preventDefault(), !1)
+              : !!a.test(l) || (e.preventDefault(), !1);
+          }),
+          $("#request_callback_no").on("cut", function (e) {
+            e.preventDefault();
+          }),
+          $("#request_callback_no").on("copy", function (e) {
+            e.preventDefault();
+          }),
+          $("#request_callback_no").on("paste", function (e) {
+            e.preventDefault();
+          }),
+          $(document).keydown(function (e) {
+            1 == e.ctrlKey &&
+              "86" == e.which &&
+              ($("#d2").text("paste. not allowed!"), e.preventDefault()),
+              1 == e.ctrlKey &&
+                "88" == e.which &&
+                ($("#d2").text("cut. not allowed!"), e.preventDefault()),
+              1 == e.ctrlKey &&
+                "67" == e.which &&
+                ($("#d2").text("copy. not allowed!"), e.preventDefault());
+          }),
+          $(document).keydown(function (e) {
+            1 == e.ctrlKey && "86" == e.which && e.preventDefault(),
+              1 == e.ctrlKey && "88" == e.which && e.preventDefault(),
+              1 == e.ctrlKey && "67" == e.which && e.preventDefault();
+          }),
+          $.each("#mobile_no".split(" "), function (e, t) {
+            $(t).on("change", function () {
+              var a = 0;
+              $.each("#mobile_no".split(" "), function (e, t) {
+                a += $(t).val().length;
+              }),
+                a < 10
+                  ? ($("#ten_digit_no").attr("style", "display: block;"),
+                    $("#stones_weight").attr("disabled", "disabled"),
+                    $("#gross_weight").attr("disabled", "disabled"))
+                  : ($("#ten_digit_no").attr("style", "display: none;"),
+                    $("#gross_weight").removeAttr("disabled"),
+                    $("#stones_weight").removeAttr("disabled"));
+            });
+          }),
+          $("#gross_weight").on("keyup", function () {
+            $("#stones_weight").val(""), $("#net_weight_in_grams").val("");
+          }),
+          $("#stones_weight").on("keyup", function () {
+            var e = $("#gross_weight").val(),
+              t = $("#stones_weight").val(),
+              a = parseInt(e) - parseInt(t);
+            a < 0
+              ? (alert("Stones weight should be less than gross weight"),
+                $("#stones_weight").val(""),
+                $("#net_weight_in_grams").val(""))
+              : $("#net_weight_in_grams").val(a);
+          }),
+          $("#submitBtn").on("click", function (e) {
+            var a = {},
+              l = 0;
+            $.each($("#goldPriceCalculator").serializeArray(), function (e, t) {
+              (a[t.name] = t.value), "" != t.value ? (l += 1) : (l -= 1);
+            });
+            Object.keys(a).values();
+            if (6 == l) {
+              e.preventDefault();
+              var t = "/get-goldprice?" + $("#goldPriceCalculator").serialize();
+              $.ajax({
+                type: "POST",
+                url: t,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (e) {
+                  $("div.price-details").text("Rs. " + e.price),
+                    $("div.price-details").attr("style", "display: block;"),
+                    $("#submitBtn").attr("style", "display: none;");
+                },
+                error: function (e) {
+                  400 == e.status
+                    ? alert("Please fill all the fields")
+                    : alert("Something went wrong");
+                },
+              });
+            } else alert("Please fill all the fields"), e.preventDefault();
+          });
+      }),
+      
+        $("#request_callback_sidebar").submit(function (e) {
+          if ("" == $("#full_no, #phone_num").val())
+            alert("Please fill all the fields"), e.preventDefault();
+          else {
+            e.preventDefault();
+            var otpModal = new bootstrap.Modal(document.getElementById('verifyOtpModal'));
+            const phoneNumber = document.getElementById('phone_num').value;
+            fetch('/verify', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ 
+                phone: phoneNumber ,
+              }),
+            }).then(response => response.json())
+              .then(data => {
+                
+                if (data.success) {
+                  // Show the OTP modal
+                  $("#Request_callback").removeClass("show")
+                  otpModal.show()
+                } else {
+                  alert('Failed to send OTP. Please try again.');
+                  $("#Request_callback").addClass("show");
+                }
+              });
+
+              document.getElementById('verifyOtpModal').addEventListener('hidden.bs.modal', function () {
+                console.log('OTP Modal is closed');
+                $("#Request_callback").addClass("show");
+              });
+
+              document.getElementById('verifyOtpBtn').addEventListener('click', function() {
+                var otpModal = new bootstrap.Modal(document.getElementById('verifyOtpModal'));
+                var otpInput = document.getElementById('otpInput').value;
+            
+                // Check if OTP is correct (this logic will depend on your server-side verification)
+                if (otpInput != "") { // Example OTP value
+                  // Close the modal
+                  fetch('/verify-otp', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ otp: otpInput }),
+                  }).then(response => response.json())
+                    .then(data => {
+                      if (data.success) {
+                        otpModal.hide()
+                        var t = $("#request_callback_sidebar"),
+                          a = "/request-callback-sidebar?" + t.serialize();
+                        $.ajax({
+                          type: "POST",
+                          url: a,
+                          data: t.serialize(),
+                          success: function (e) {
+                            200 == e.status &&
+                              ($("#full_no, #phone_num").val(""),
+                              $("#Request_callback").removeClass("show"),
+                              (window.location.href =
+                                "https://hindustangoldcompany.com/callform"));
+                          },
+                          error: function (e) {
+                            alert(
+                              "Please try again with right input or call us for support on 8088550033!"
+                            );
+                          },
+                        });
+                        
+                        
+                      } else {
+                        alert('Invalid OTP. Please try again.');
+                      }
+                    });
+                } else {
+                  alert("Invalid OTP! Please try again.");
+                }
+              });
+            
+          }
+        }),
+        $("#request_callbac").submit(function (e) {
+          if ("" == $("#full_name, #phone_number, #selectoption").val())
+            alert("Please fill all the fields"), e.preventDefault();
+          else {
+            e.preventDefault();
+            var t = $("#request_callbac"),
+              a = "/request-callback-form?" + t.serialize();
+            $.ajax({
+              type: "POST",
+              url: a,
+              data: t.serialize(),
+              success: function (e) {
+                200 == e.status &&
+                  ($("#full_name, #phone_number, #selectoption").val(""),
+                  (window.location.href =
+                    "https://hindustangoldcompany.com/requestform"));
+              },
+              error: function (e) {
+                alert(
+                  "Please try again with right input or call us for support on 8088550033!"
+                );
+              },
+            }),
+              $('form[name="myform"] input:reset').click(function () {
+                return (
+                  $('form[name="myform"]')
+                    .find(":radio, :checkbox")
+                    .removeAttr("checked")
+                    .end()
+                    .find(":text, select")
+                    .val(""),
+                  !1
+                );
+              });
+          }
+        }),
+        script,
+        jQuery(document).ready(function () {
+          jQuery(".wp-block-yoast-faq-block .schema-faq-section:first-child")
+            .addClass("active")
+            .children(".schema-faq-answer")
+            .slideDown(),
+            jQuery(".schema-faq-question").on("click", function () {
+              jQuery(this).parent().hasClass("active")
+                ? (jQuery(this).next().slideUp(),
+                  jQuery(this).parent().removeClass("active"))
+                : (jQuery(".schema-faq-answer").slideUp(),
+                  jQuery(".schema-faq-section").removeClass("active"),
+                  jQuery(this).parent().addClass("active"),
+                  jQuery(this).next().slideDown());
+            });
+        });
+    </script>
+  </body>
+</html>

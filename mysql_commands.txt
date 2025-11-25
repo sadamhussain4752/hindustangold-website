@@ -1,0 +1,38 @@
+gmJAH9dM99ofFjef
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'gmJAH9dM99ofFjef';
+
+ALTER USER 'production'@'localhost' IDENTIFIED WITH mysql_native_password by 'gmJAH9dM99ofFjef';
+
+CREATE USER 'admin_hindustan_gold'@'3.111.168.101' IDENTIFIED WITH mysql_native_password BY 'gmJAH9dM99f@2022';
+
+GRANT PRIVILEGE ON database.table TO 'admin_hindustan_gold'@'host';
+
+CREATE USER 'admin_hindustan_gold'@' 3.111.168.101' IDENTIFIED BY 'gmJAH9dM99ofFjef';
+
+sudo ufw allow from  3.111.168.101 to any port 3306
+
+
+ALTER USER 'hindustan_user'@'localhost' IDENTIFIED WITH mysql_native_password by 'gmJAH9dM99f@2022';
+
+ALTER USER 'hindustan_user'@'localhost' IDENTIFIED WITH mysql_native_password by 'gmJAH9dM99f@2022';
+
+CREATE USER 'hindustan_web_admin'@'localhost' IDENTIFIED WITH mysql_native_password by 'gmJAH9dM99f@23_secure';
+
+GRANT ALL PRIVILEGE ON hindustan_production  TO 'hindustan_web_admin'@'host';
+
+GRANT ALL PRIVILEGES ON *.* TO 'hindustan_web_admin'@'localhost' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'hindustan_web_admin'@'103.103.123.2' WITH GRANT OPTION;
+
+GRANT ALL ON hindustan_development.* TO hindustan_web_dev@'103.103.123.2' IDENTIFIED WITH mysql_native_password by 'gmJAH9dM99f@23_secure';
+
+GRANT ALL ON database_name.* to 'database_username'@'12.24.94.20' IDENTIFIED BY 'database_password';
+
+update db set Host=’103.103.123.2' where Db='hindustan_development';
+update user set Host=’103.103.123.2' where user='hindustan_web_dev';
+
+sudo ufw allow from 103.103.123.2 to any port 3306
+
+USE my_database;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'103.103.123.2' IDENTIFIED BY 'my-password';

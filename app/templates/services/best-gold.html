@@ -1,0 +1,83 @@
+{% extends "home.html" %} {% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h1 class="about-products">BEST GOLD BUYERS</h1>
+            <p class="para"><strong>HINDUSTAN GOLD COMPANY</strong> is a trusted gold buyer for the best price for your gold. We buy gold and gold-related items in any form. If you are looking to sell, convert gold to cash, or even want to release a pledge gold loan
+                for CASH ON SPOT. Our team ensures you get the best price in the market that none can match. No other Gold buyers can meet the <a href="/blog/gold-price-today/">gold price</a> that we can offer you.</p>
+            <p class="para">We evaluate your gold ornaments with advanced techniques and Buy your Gold, paying cash immediately as per the online price. You get the best service when you walk in with your Gold jewelry. Hindustan Gold Company can give you the best price
+                for your OLD GOLD, which none of them can match in the Industry.</p>
+            <p class="para"><strong> You can sell your gold jewellery in simple three steps</strong></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <span class="badge1 bg-danger">Step 1</span>
+            <h3 class="h3">Walk-in with your Gold</h3>
+            <p class="para">If you want to Sell Gold, walk in to our nearest <a href="/branches/">branch</a>. 
+            If you want us to help you release your pledged gold, walk-in with the pledge slip and we are here to help you release your Gold.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div class=" flex-img-box">
+                <img src="{{ url_for('static', filename='img/step1.webp') }}" class="img1" alt="Cash for gold near me" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <span class="badge1 bg-danger">Step 2</span>
+            <h3 class="h3">Purity Check</h3>
+            <p class="para">Hindustan Gold Company is only Gold Buyer Company that gives you the best price for the Gold based on its purity. Check purity of your GOLD for FREE. We are transparent on valuation of your GOLD purity. We use latest technology machine that
+                gives 100% purity for your gold ornaments.</p>
+        </div>
+        <div class="col-md-6">
+            <div class=" flex-img-box">
+                <img src="{{ url_for('static', filename='img/step2.webp') }}" class="img1" alt="Step 2" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <span class="badge1 bg-danger">Step 3</span>
+            <h3 class="h3">Sell Gold at Online Price</h3>
+            <p class="para">Sell Gold to get Instant Cash. Hindustan Gold Company helps you get the best Online price that, Market can never match. We understand the needs and cater you. We have won the trust of millions of customers during our 20 years journey.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div class=" flex-img-box">
+                <img src="{{ url_for('static', filename='img/step3.webp') }}" class="img1" alt="Step 3" />
+            </div>
+        </div>
+    </div>
+    <div class="row"><br><br><h3 class="h3">Market Place as Best Gold Buyers </h3>
+        <p class="para"><a href="/">Hindustan Gold Company</a> aims to provide you the honest and transparent services. <a href="/">Gold buyers</a> are the gold believers. Approach our trusted gold buyers for the best price for your gold. Hindustan Gold Company is the right place to satisfy your expectation.</p>
+        <p class="para">Your jewel is your identity. Every designed jewel has its own story to tell and shines bright with pieces that surprise you. Once the customer has decided to <a href="{{url_for('services.selected_service', service_name='sell-gold' )}}">SELL GOLD</a>, they opt to visit our branches for the best gold buyers experience to sell their valuable gold. There are defined procedures that are followed, to reflect the norms of the professional gold company. Always the best gold buyers are at your service if you are sure looking to sell your valuable gold. Are you looking for the right price to sell your gold?</p>
+        <p class="para">For that, you have selected the right place to sell your GOLD. We are here to sort the solution to your tension into happiness. In India, we know how much we value gold and how much it means for Indian brides, and also used in the form of gifts. Gold has its own place as a rich history throughout the world and the main part of our culture for a long year. The demand for gold in India is a vast competition.</p>
+    </div>
+    
+</div>
+<script>
+    
+    $(document).ready(function(){
+        
+            $(function () {
+            //update Meta Tag in Header
+            document.title= 'Best Gold Buyers | Hindustan Gold Company';
+            document.querySelector('meta[name="keywords"]').setAttribute("content", "best gold buyers, jewellery buyers, best gold buyers near me, jewellery buyersReputed gold buyer company, gold company, cash for gold, best price for your gold");
+            document.querySelector("[name='description']").remove();
+
+            let metatag = document.createElement('meta');
+            metatag.setAttribute('name', 'description');
+            metatag.content = 'Best gold jewellery buyers which buy all kinds of used ; old gold, silver, and diamond jewelry at the best price with instant cash on the spot.';
+            document.getElementsByTagName('head')[0].appendChild(metatag);
+            
+        });
+
+});
+</script>
+</div>
+
+{% endblock %}
+

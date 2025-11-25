@@ -1,0 +1,80 @@
+{% extends "home.html" %}
+{% block main %}
+
+  
+ 
+  <div class="d-flex justify-content-center align-items-center">
+    <a href="https://wa.me/+919741637635" class="" target="_blank">
+        <div class="float">
+            <i class="fab fa-whatsapp my-float" target="_blank" rel="noopener noreferrer"></i>
+        </div>
+        <h1 class="text-center float1">
+            Need Help?
+        </h1>
+      </a>
+    <div class="col-md-4">
+        <div class="border border-3 border-success"></div>
+        <div class="card  bg-white shadow p-5">
+            <div class="mb-4 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="text-success" width="75" height="75"
+                    fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                </svg>
+            </div>
+            <div class="text-center">
+                <h1>Thank You !</h1>
+                <p>We will get back to you as soon as possible</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+  <script>
+    setTimeout(function(){window.location.href = "http://127.0.0.1:5000/";}, 4000);
+ </script> -->
+ <script>
+    const oneDay = 24 * 60 * 60 * 1000; // 1 day in milliseconds
+const expirationDate = new Date(Date.now() + oneDay);
+
+// Format the expiration date in UTC format
+const expires = `expires=${expirationDate.toUTCString()}`;
+
+// Set the cookie with a 24-hour session
+document.cookie = `user=HindustanGold; path=/; ${expires}`;
+    const allCookies = document.cookie;
+
+
+// Function to retrieve a specific cookie by name
+function getCookie(name) {
+    const cookies = document.cookie.split('; ');
+    for (const cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split('=');
+        if (cookieName === name) {
+            return cookieValue;
+        }
+    }
+    return null; // Cookie not found
+}
+
+
+    const userCookie = getCookie('user');
+    console.log("cookiedata:",userCookie);
+    function redirectToPageWithParameter() {
+  
+        const redirectToURL = `https://hindustangoldcompany.com/`;
+        
+        setTimeout(function() {
+            window.location.href = redirectToURL;
+        }, 2000);
+    }
+    
+    // Call the function to initiate the timeout and redirect
+    redirectToPageWithParameter();
+</script>
+<!-- <script>
+    setTimeout(function(){history.back();}, 4000);
+ </script> -->
+{% endblock %}
+ 

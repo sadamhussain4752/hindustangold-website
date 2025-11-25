@@ -1,0 +1,201 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css" integrity="sha512-8vq2g5nHE062j3xor4XxPeZiPjmRDh6wlufQlfC6pdQ/9urJkU07NM0tEREeymP++NczacJ/Q59ul+/K2eYvcg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container-fluid">
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <h3 class="">CallBack list</h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="card-body table-responsive p-0">
+                <table class="table table-bordered table-hover dataTable dtr-inline" id="table" data-page-length='50'>
+                    <thead>
+                        <tr>
+                            <th>
+                                SL.No
+                            </th>
+                            <th>
+                                Full Name
+                            </th>
+                            <th>
+                                Phone Number
+                            </th>
+                            <th>
+                                Request For
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for item in list_of_contacts.items %}
+                        <tr>
+                            <td>
+                                {{ item.id}}
+                            </td>
+                            <td>
+                                {{ item.full_name}}
+                            </td>
+                            <td>
+                                {{ item.phone_number}}
+                            </td>
+                            <td>
+                                {{ item.selectoption}}
+                            </td>
+                            <td>
+                                {{ item.date.strftime('%d-%m-%y %H:%M:%S')}}
+                            </td>
+                            <td>
+                                {% if item.status == 1 %}
+                                   <p><b>Pending</b></p> 
+                                {% elif item.status == 2 %}
+                                    <p style="color: green;"><b>Inprogress</b> </p>
+                                {% elif item.status == 3%}
+                                    <p style="color: goldenrod;"><b>Completed</b></p>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <i class="fa fa-clipboard" type="button"  data-toggle="modal" data-target="#exampleModal{{item.id}}"></i>
+                            </td>
+                            <div class="modal fade" id="exampleModal{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Callback Update</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <form  method="POST" action="/admin/request-forms-list" >
+                                    <div class="modal-body">
+                                        
+                                        
+                                        
+                                            <input type="hidden" name="id" value="{{item.id}}">
+                                            <label >Name</label>
+                                            <input type="text" name="full_name" class="form-control" value=" {{ item.full_name}}" disabled>
+                                            <label>Phone </label>
+                                            <input type="text" name="phone_number" class="form-control" value="{{item.phone_number}}" disabled>
+                                            <p style="font-weight: bold; color: gray; margin-top: 2%;">Select an option <span style="color: red;">*</span></p>
+                                          
+                                            {% if item.status == 1 %}
+                                            <div >
+                                               
+                                                <div class="radio icheck-pumpkin">
+                                                    <input type="radio" checked="" id="Pending{{item.id}}"  value="1" name="status" required>
+                                                    <label for="Pending{{item.id}}">Pending</label>
+                                                </div>
+                                                <div class="radio icheck-pumpkin">
+                                                    <input type="radio"  id="Inprogress{{item.id}}" value="2"  name="status" required>
+                                                    <label for="Inprogress{{item.id}}">Inprogress</label>
+                                                </div>
+                                                <div class="radio icheck-pumpkin">
+                                                    <input type="radio" id="Completed{{item.id}}" value="3"  name="status" required>
+                                                    <label for="Completed{{item.id}}">Completed</label>
+                                                </div>
+                                               
+                                            </div>
+                                        {% elif item.status == 2 %}
+                                        <div >
+                                               
+                                            <div class="radio icheck-pumpkin">
+                                                <input type="radio"  id="Pending{{item.id}}"  value="1" name="status" required>
+                                                <label for="Pending{{item.id}}">Pending</label>
+                                            </div>
+                                            <div class="radio icheck-pumpkin">
+                                                <input type="radio" checked="" id="Inprogress{{item.id}}" value="2"  name="status" required>
+                                                <label for="Inprogress{{item.id}}">Inprogress</label>
+                                            </div>
+                                            <div class="radio icheck-pumpkin">
+                                                <input type="radio" id="Completed{{item.id}}" value="3"  name="status" required>
+                                                <label for="Completed{{item.id}}">Completed</label>
+                                            </div>
+                                           
+                                        </div>
+                                        {% elif item.status == 3%}
+                                        <div >
+                                               
+                                            <div class="radio icheck-pumpkin">
+                                                <input type="radio" id="Pending{{item.id}}"  value="1" name="status" required>
+                                                <label for="Pending{{item.id}}">Pending</label>
+                                            </div>
+                                            <div class="radio icheck-pumpkin">
+                                                <input type="radio"  id="Inprogress{{item.id}}" value="2"  name="status" required>
+                                                <label for="Inprogress{{item.id}}">Inprogress</label>
+                                            </div>
+                                            <div class="radio icheck-pumpkin">
+                                                <input type="radio" checked="" id="Completed{{item.id}}" value="3"  name="status" required>
+                                                <label for="Completed{{item.id}}">Completed</label>
+                                            </div>
+                                           
+                                        </div>
+                                        {% endif %}
+                                            
+                                           
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+            <!-- Pagination Links-->
+            <div class="text-right">
+                <a href="{{ url_for('customers.request_forms_datatable', page=list_of_contacts.prev_num) }}" class="btn btn-outline-dark 
+           {% if list_of_contacts.page == 1 %}disabled{% endif %}">
+                    &laquo;
+                </a>
+                <!-- Loop through the number of pages to display a link for each-->
+                {% for page_num in list_of_contacts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                {% if page_num %}
+                <!-- Check for the active page and set the link to "Active"-->
+                {% if list_of_contacts.page == page_num %}
+                <a href="{{ url_for('customers.request_forms_datatable', page=page_num) }}" class="btn btn-dark">
+                    {{ page_num }}
+                </a>
+                {% else %}
+                <a href="{{ url_for('customers.request_forms_datatable', page=page_num) }}" class="btn btn-outline-dark">
+                    {{ page_num }}
+                </a>
+                {% endif %}
+                {% else %}
+                ...
+                {% endif %}
+                {% endfor %}
+                <a href="{{ url_for('customers.request_forms_datatable', page=list_of_contacts.next_num) }}" class="btn btn-outline-dark 
+           {% if list_of_contacts.page == list_of_contacts.pages %}disabled{% endif %}">
+                    &raquo;
+                </a>
+            </div>
+            <p class="text-right mt-3">
+                Showing page {{ list_of_contacts.page }} of {{ list_of_contacts.pages }}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

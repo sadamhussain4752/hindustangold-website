@@ -1,0 +1,31 @@
+{% block branches %}
+{% for item in branches %}
+<div class="flex-items row" data-tag="{{ item.branch.name  }}" data-state="karnataka">
+    <div class="col-md-6">
+      <div class="map-desc">
+        <!-- <h3><a href="/branch-searched/{{item.branch.name | format_branch_url }}" >{{ item.branch.name }}</a></h3> -->
+        <h3><a href="/branches/hindustan-gold-company-{{item.branch.name | format_branch_url }}/" >Hindustan Gold Buyers {{ item.branch.name }}</a></h3>
+        <div class="d-flex">
+          <div class="col-grid-item">
+            <label for="address">Address</label>
+            <p class="para">{{ item.branch.address }}, {{ item.city.name }}, {{ item.branch.pincode }}  </p>
+            <a href="{{ item.branch.gmap_link }}" target="_blank"> Get
+              Directions</a>
+          </div>
+          <div class="col-grid-item">
+            <label for="contact">Contact</label>
+            <p class="para"><span style="display: flex;"><img style="height:16px;width:16px;border-radius: 20%;margin-top:6px;margin-right: 5px;" src="{{ url_for('static',filename='/img/icon_image/mailIcon.png') }}" alt="">{{ item.branch.email }}</span><br />
+               <span style="display: flex;"><img style="height:16px;width:16px;border-radius: 45%;margin-top:5px;margin-right: 5px;" src="{{ url_for('static',filename='/img/icon_image/images.png') }}" alt="">{{ item.branch.contact_no }}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 p-0">
+      <div class="map-img">
+        <img src="{{ url_for('static', filename='img/branches/img_branches.jpg') }}" alt="Pledged gold near me">
+        <a href="{{ item.branch.gmap_link }}" target="_blank"> <img src="{{ url_for('static', filename='img/map.webp') }}" alt="Pledged gold near me"></a>
+      </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

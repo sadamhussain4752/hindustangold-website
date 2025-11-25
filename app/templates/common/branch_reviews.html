@@ -1,0 +1,14 @@
+{% block review %}
+{% for review in reviews %}
+    <div class="review-row">
+        <i class='fa fa-user-circle-o user'></i>
+        <div class="review-text">
+            <h4>{{ review.user_name }} <i class="fa fa-star stars"></i><i class="fa fa-star  stars "></i><i
+                    class="fa fa-star stars "></i><i class="fa fa-star stars "></i><i class="fa fa-star stars "></i>
+                <span class="date">{% if review.date %} {{ (review.date).strftime('%d-%m-%Y') }} {% endif %} </span>
+            </h4>
+            <p>{{ review.review }}</p>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

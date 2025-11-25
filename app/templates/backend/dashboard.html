@@ -1,0 +1,65 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        <h2 class="card-title">Customers Section </h3>
+        <br />
+        <hr>
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{ dashboard.CONTACT_US_COUNT }}</h3>
+
+                        <p>Contact us</p>
+                    </div>
+                    <a href="/admin/contact-us-list" class="small-box-footer">More info <i
+                            class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{ dashboard.REQUEST_CALLBACK_COUNT }}</h3>
+
+                        <p>Callback</p>
+                    </div>
+                    <a href="/admin/request-forms-list" class="small-box-footer">More info <i
+                            class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{ dashboard.PRICE_ENQUIRY_COUNT }}</h3>
+                        <p>Gold Price Enquiry</p>
+                    </div>
+                    <a href="/admin/user-gold-price-enquiry" class="small-box-footer">More info <i
+                            class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{ dashboard.CAREER_ENQUIRY_COUNT }}</h3>
+                        <p>Career Enquiry</p>
+                    </div>
+                    <a href="/admin/career-enquiry" class="small-box-footer">More info <i
+                            class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+{% endblock %}

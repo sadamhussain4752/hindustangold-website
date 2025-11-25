@@ -1,0 +1,95 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header" >
+                        <h3 class="card-title">City Crud</h3>
+                    </div>
+                    <form method="post" action="{{ url_for('city.create') }}">
+                        <div class="row">
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label>States</label>
+                                    <select class="form-control" name="state_id" id="state_id" required>
+                                        <option value="" vt="">Select State</option>
+                                        {% for state in states%}
+                                        <option value="{{ state.id }}">{{ state.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>City Name</label>
+                                    <input type="text" name="city" placeholder="Enter City Name" class="form-control"
+                                        id="city" required="">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary"
+                                >Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="">City list</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body table-responsive p-0">
+                            <table class="table-bordered " id="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            SL.No
+                                        </th>
+                                        <th>
+                                            City
+                                        </th>
+                                        <th>
+                                            State
+                                        <th>
+                                            Action
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% for item in cities %}
+                                    <tr>
+                                        <td>
+                                            {{ item.id}}
+                                        </td>
+                                        <td>
+                                            {{ item.name}}
+                                        </td>
+                                        <td>
+                                            {{ item.state.name }} 
+                                        </td>
+                                        <td>
+                                            <a href="{{ url_for("city.edit", id=item.id) }}"><i class="fa fa-edit"></i>Edit</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit Meta Information</h3>
+                    </div>
+                    <form method="post" action="{{ url_for("seo.edit", id=meta_data.id) }}">
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Page</label>
+                                    <select class="form-control" name="page" id="page" required>
+                                        <option value="{{ meta_data.page}}" vt="">Select Page</option>
+                                        <option value="home"              {% if meta_data.page == "home" %} selected {% endif %} > Home </option>
+                                        <option value="about_us"          {% if meta_data.page == "about_us" %} selected {% endif %} > About Us </option>
+                                        <option value="branches"          {% if meta_data.page == "branches" %} selected {% endif %} > Branches </option>
+                                        <option value="individual_branch" {% if meta_data.page == "individual_branch" %} selected {% endif %} > Individual Branch </option>
+                                        <option value="services"          {% if meta_data.page == "services" %} selected {% endif %} > Services </option>
+                                        <option value="individual_services" {% if meta_data.page == "individual_services" %} selected {% endif %} > Individual Services </option>
+                                        <option value="blog" {% if meta_data.page == "blog" %} selected {% endif %} > Blog </option>
+                                        <option value="individual_blog" {% if meta_data.page == "individual_blog" %} selected {% endif %} > Individual Blog </option>
+                                        <option value="contact_us"        {% if meta_data.page == "contact_us" %} selected {% endif %} > Contact Us </option>
+                                        <option value="careers"           {% if meta_data.page == "careers" %} selected {% endif %} > Careers </option>
+                                        <option value="appy_careers"           {% if meta_data.page == "appy_careers" %} selected {% endif %} > Apply Careers </option>
+                                        <option value="terms"           {% if meta_data.page == "terms" %} selected {% endif %} > Terms </option>
+                                        <option value="check_gold_price"           {% if meta_data.page == "check_gold_price" %} selected {% endif %} > Check Gold Price </option>
+                                        <option value="gold_buyers"           {% if meta_data.page == "gold_buyers" %} selected {% endif %} > Gold Buyers </option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group" id="branch_form" style="display: none;">
+                                    <label>Branch</label>
+                                    <select class="form-control" name="branch_page" id="branch_page">
+                                        <option value="" vt="">Select Branch</option>
+                                        {% for branch in branches %}
+                                            <option value="{{ meta_data.page}}" vt="" {% if meta_data.page == branch.name %}selected {% endif %} >{{ branch.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group" id="blog_form" style="display: none;">
+                                    <label>Blogs Topic</label>
+                                    <select class="form-control" name="blog_page" id="blog_page">
+                                        <option value="" vt="">Select Blog</option>
+                                        {% for blog in in_blog %}
+                                        <option value="{{ meta_data.page}}" vt="" {% if meta_data.page == blog %}selected {% endif %} >{{ blog }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group" id="service_form" style="display: none;">
+                                    <label>Services Topic</label>
+                                    <select class="form-control" name="service_page" id="service_page">
+                                        <option value="" vt="">Select Services</option>
+                                        {% for service in in_services %}
+                                        <option value="{{ meta_data.page}}" vt="" {% if meta_data.page == service %}selected {% endif %} >{{ service }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input class="form-control" type="text" name="title" id="title" value="{{ meta_data.title}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Keywords</label>
+                                    <textarea class="form-control" type="text" rows="4" name="keywords" id="keywords"  required>{{meta_data.keywords}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control" type="text" name="description" id="description" rows="6" required>{{ meta_data.description }}</textarea>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="button" onclick="window.location.href='/admin/seo/list'" class="btn btn-default float-right">Back to list</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>      
+    </div>
+</div>
+
+{% endblock %}

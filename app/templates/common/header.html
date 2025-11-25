@@ -1,0 +1,201 @@
+{% block header %}
+<header>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJWZWGBR');</script>
+<!-- End Google Tag Manager -->
+
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container flex-md-column flex-sm-row">
+      <div class="row width-full">
+        <div class="col-xs-4 col-md-4 col-sm-4"></div>
+        <div class="col-xs-4 col-md-4 text-center col-sm-4">
+          <div class="logo">
+            <a href="/"><img class="image_h5" src="{{ url_for('static', filename='img/logo.svg') }}"
+                alt="Hindistan Gold" /></a>
+            <img class="iso-logo" src="{{ url_for('static', filename='img/iso-certified.svg') }}" alt="iso certified" />
+          </div>
+        </div>
+        <!-- <div class="col-xs-4 col-md-4 col-sm-4 text-center text-white"> -->
+        <div class="col-xs-4 col-md-4 col-sm-4 text-left headercenter text-white">
+          <div class="headercenter">
+            <a href="https://www.facebook.com/hindustangold" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-facebook-f text-white"></i></a>
+
+            <a href="https://twitter.com/hindustangoldc1" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-twitter text-white"></i></a>
+
+            <a href="https://in.pinterest.com/cmmhgc/_saved/" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-pinterest text-white"></i></a>
+
+            <a href="https://www.instagram.com/hindustan_gold_company/?hl=en" target="_blank"
+              rel="noopener noreferrer"><i class="fab fa-instagram text-white"></i></a>
+
+            <a href="https://www.linkedin.com/company/82327356/admin/" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-linkedin-in text-white"></i></a>
+
+            <a href="https://www.youtube.com/@hindustangold5254" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-youtube text-white"></i></a>
+
+            <a href="https://wa.me/919741637635" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-whatsapp text-white"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
+        aria-controls="navCollapse" aria-label="Toggle navigation">
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        {% include 'common/navbar.html' %}
+      </div>
+    </div>
+  </nav>
+  <div class="row mx-auto" style="padding: 3px; background: #bb9b49"></div>
+</header>
+
+<!-- <div class="social">
+    <a href="https://www.facebook.com/hindustangold">Facebook <i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/channel/UCO8nW4-OC6QxSU65XshDVMw/featured">Youtube <i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/hindustan_gold_company/?hl=en">Instagram <i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/919741637635">Whatsapp <i class="fab fa-whatsapp"></i></a>
+    <a href="https://in.pinterest.com/cmmhgc/_saved/">Pinterest <i class="fab fa-pinterest"></i></a>
+    <a href="https://twitter.com/hindustangoldc1">Twitter <i class="fab fa-twitter"></i></a>  
+  </div> -->
+<!-- Start Request callback -->
+<div class="sticky-item">
+  <div class="button-group">
+    <button type="button" data-id="Request_callback"
+      class="btn btn-success request-callback-btn request-callback tooltip-wrapper" data-toggle="tooltip" name="button">
+      <i class="fa fa-phone" style="transform: rotate(180deg)"></i> Request
+      Callback
+    </button>
+    <a href="tel:08088550033" data-id="Request_callback" class="btn btn-success request-callback-btn tooltip-wrapper"
+      data-toggle="tooltip" id="callback"><i class="fa fa-phone" style="transform: rotate(90deg)"></i> Call us</a>
+  </div>
+
+  <div class="tooltip-drpdown" id="Request_callback">
+    <form id="request_callback_sidebar" method="post" action="/request-callback-sidebar">
+      <img src="https://ventes40.gotrackier.com/pixel?adid=636261702466f95eb34c8803" alt="gotrackier"
+        style="display: none" />
+      <span class="close-icon">&#x2715;</span>
+      <p>
+        Please submit the form below, our customer care will reach you on given
+        number to get more details
+      </p>
+      <input type="text" id="full_no" class="form-control" name="full_no" value="" placeholder="Enter your Name"
+        required />
+      <input type="text" id="phone_num" name="phone_num" class="form-control" placeholder="Enter your Moblie Number"
+        pattern="[1-9]{1}[0-9]{9}" maxlength="10" minlength="10"
+        oninput="this.value = this.value.replace(/[^0-9+]/g, '');" title="Enter 10 digit mobile number" required />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+<!-- End Request callback -->
+
+<!-- Modal -->
+<div class="modal fade calculate_price" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Today's Price</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="goldPriceCalculator" action="/get-goldprice" class="form-horizontal" method="post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Select State</label>
+                <select class="form-select" id="state_city" name="state_city" required>
+                  <option value="">Select State</option>
+                  {% for state in states %}
+                  <option value="{{state.id}}">{{ state.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="customer_name" id="customer_name" class="form-control" required />
+                <label id="warning_lable" style="display: none" class="label label-warning">Please enter Full name and
+                  Mobile number</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Mobile No</label>
+
+                <input type="text" name="mobile_no" id="mobile_no" placeholder="Enter Mobile No." class="form-control"
+                  required />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Gross Weight in Grams</label>
+                <input type="number" step="any" name="gross_weight" id="gross_weight"
+                  placeholder="Enter Gross Weight in Grams" class="form-control" required disabled />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Stones Weight</label>
+                <input type="number" step="any" name="stones_weight" id="stones_weight" class="form-control"
+                  placeholder="Enter Stones Weight" required disabled />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Net Weight in Grams</label>
+                <input type="number" step="any" name="net_weight_in_grams" id="net_weight_in_grams" class="form-control"
+                  placeholder="Enter Net Weight in grams" disabled />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Gold Purity By Carat</label>
+                <select id="karat_list" name="karat_list" class="field medium valid form-select" data-form-type="other"
+                  required>
+                  <option value="">Select Carat</option>
+                  <option value="24">24 Karat</option>
+                  <option value="22">22 Karat</option>
+                  <option value="21">21 Karat</option>
+                  <option value="20">20 Karat</option>
+                  <option value="19">19 Karat</option>
+                  <option value="18">18 Karat</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" id="submitBtn" class="btn btn-primary">
+              Check Price
+            </button>
+            <div class="price-details"></div>
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

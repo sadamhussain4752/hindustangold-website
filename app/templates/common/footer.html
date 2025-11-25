@@ -1,0 +1,219 @@
+{% block nav %}
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <div class="row">
+        <div class="col-xs-4 col-md-4 col-sm-4">
+          <h2 class="footerquicklinksheading footerquickbottom" style="margin-top: 25px;">
+            Quick Links : Our Services
+          </h2>
+          <div style="font-weight: 500;" class="footerquickbottom">
+            <p class="footerquick"><a href="{{url_for( 'services.selected_service', service_name='best-gold' )}} " 
+              style="font-weight: 400;"> Gold Buyers</p>
+            <p class="footerquick">
+              <a href="{{url_for('services.selected_service', service_name='release-pledged-gold' )}}"
+              style="font-weight: 400;">Release Pledged
+                Gold</a>
+            </p>
+            <p class="footerquick">
+              <a href="{{url_for('services.selected_service', service_name='sell-gold' )}}"
+              style="font-weight: 400;">Sell Gold</a>
+            </p>
+            <p class="footerquick">
+              <a href="{{url_for('services.selected_service', service_name='value-for-gold' )}}"
+              style="font-weight: 400;">Value for Gold</a>
+            </p>
+            <!-- <li>
+              <a target="_blank" href="/terms/">Door Steps Jewellery Buyers</a>
+            </li> -->
+            <p class="footerquick"><a href="/check-gold-price/"
+              style="font-weight: 400;">Online Gold Price</a></p>
+          </div>
+          <p style="margin-bottom: 0px; color: #e5a80b; font-size: 20px;">Follow us :</p>
+            <div class="text-left text-white goldtermsconditions" style="margin-top: 20px;">
+              <a href="https://www.facebook.com/hindustangold" target="_blank" rel="noopener noreferrer" class="footersocial"><i
+                  class="fab fa-facebook-f "></i></a>
+
+              <a href="https://twitter.com/hindustangoldc1" target="_blank" rel="noopener noreferrer" class="footersocial"><i
+                  class="fab fa-twitter"></i></a>
+
+              <a href="https://in.pinterest.com/cmmhgc/_saved/" target="_blank" rel="noopener noreferrer" class="footersocial"><i
+                  class="fab fa-pinterest"></i></a>
+
+              <a href="https://www.instagram.com/hindustan_gold_company/?hl=en" target="_blank"
+                rel="noopener noreferrer" class="footersocial"><i class="fab fa-instagram"></i></a>
+
+              <a href="https://www.linkedin.com/company/82327356/admin/" target="_blank" rel="noopener noreferrer" class="footersocial"><i
+                  class="fab fa-linkedin-in"></i></a>
+
+              <a href="https://www.youtube.com/channel/UCO8nW4-OC6QxSU65XshDVMw/featured" target="_blank"
+                rel="noopener noreferrer" class="footersocial "><i class="fab fa-youtube"></i></a>
+
+              <a href="https://wa.me/919741637635" target="_blank" rel="noopener noreferrer" class="footersocial"><i
+                  class="fab fa-whatsapp"></i></a>
+            </div>
+            <a target="_blank" href="/terms/" style="color: #e5a80b; font-weight: 400S;" class="">Terms & Conditions</a>
+        </div>
+
+        <div class="col-xs-4 col-md-4 col-sm-4 marg footerscan">
+          <div class="text-center footerscan">
+            <a href="tel:08088550033" class="nav-link" style="text-decoration: none; font-size: 35px; 
+            color: #e5a80b;" >
+              <!-- <i
+                class="fa fa-phone" style="transform: rotate(90deg)"></i> -->
+                Call :
+              8088550033</a>
+            <img class="footer-bottom_scanner" alt="Hinustan Gold Company"
+              src="{{ url_for('static', filename='img/HGC_qrcode_33808290.svg') }}" style="margin-top: 25px; " /><br />
+              
+          </div>
+        </div>
+
+        <div class="col-xs-4 col-md-4 col-sm-4 marg">
+          <div style="    text-align-last: center;">
+            <img class="footer-bottom_logo" alt="Hindustan Gold Company"
+              src="https://res.cloudinary.com/hindutan-gold-company/image/upload/c_scale,f_auto,q_auto,w_180,h_150/v1588561171/hgc_logo_gtfcyd.png" />
+            <h2 class="" style="text-transform: uppercase; font-weight: 700;
+            margin-top: 12px; font-size: 23px; color: #fff;">
+              HINDUSTAN GOLD COMPANY
+            </h2>
+            <p class="" style="margin-top: 10px; font-size: 16px;">
+              ISO 9001 – 2015 Certified Company</p>
+          </div>
+          <div class="text-left" style="margin-top: 15px; font-weight: 500; font-size: 15px; display: flex;
+          justify-content: space-between;">
+          <p class="footeraddress"> 
+              No. 24, 3rd Floor, RK Terminus Ganga Nagara,
+               Bellary Main Road, Bengaluru – 560032.
+            </p>          
+              <p class="">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d248781.41384809653!2d77.44047!3d13.022321!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17c0bb35da69%3A0x44a11813eb047605!2sHindustan%20Gold%20Company%20-%20Gold%20Buyers%20in%20Bangalore!5e0!3m2!1sen!2sin!4v1715746033641!5m2!1sen!2sin" 
+                width="160" height="120" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </p>
+          </div>
+          <p class="text-center" style="margin-top: 6px; font-weight: 500; font-size: 19px;">
+             Email:  info@hindustangoldcompany.com
+          </p>
+        </div>
+      </div>
+
+      <div class="row disclaimer" style="margin-top: 15px; font-size:16px;">
+         Disclaimer :  The Hindustan Gold Company is committed to fair trade jewelry and
+          upholds strong values on humanitarian issues. Selling looted or counterfeit 
+          gold is considered a criminal offense. Individuals aged 20 or younger can
+           sell gold with parental permission. Our company does not purchase stolen 
+           or fake gold. We are trusted gold buyers offering quick payment.
+      </div>
+      <div class="footercopyrights">
+        Copyright © 2024,Hindustan Gold Company. All Rights Reserved
+      </div>
+
+
+
+
+      <!-- <div class="row">
+        <div class="col-xs-4 col-md-4 col-sm-4">
+          <div class="text-left">
+            <b><u>Our Services</u></b>
+            <ul>
+               <li><a href="{{url_for( 'services.selected_service', service_name='best-gold' )}} ">Best Gold Buyers</li> 
+              <li>
+                <a href="{{url_for('services.selected_service', service_name='release-pledged-gold' )}}">Release Pledged
+                  Gold</a>
+              </li>
+              <li>
+                <a href="{{url_for('services.selected_service', service_name='sell-gold' )}}">Sell Gold</a>
+              </li>
+              <li>
+                <a target="_blank" href="/terms/">Door Steps Jewellery Buyers</a>
+              </li>
+              <li>
+                <a href="{{url_for('services.selected_service', service_name='value-for-gold' )}}">Value for Gold</a>
+              </li>
+              <li><a href="/check-gold-price/">Online Gold Price</a></li>
+            </ul>
+          </div>
+
+          <div class="text-left">
+            <b><u>Quick Links</u></b>
+            <p>
+              The Hindustan gold company only wants fair trade jewelry, and we
+              have strong values on humanitarian issues. Selling the looted gold
+              or duplicate gold is a criminal offense. An age limit of 20 or
+              less can sell gold with the parent's permission. Our company will
+              not buy theft or fake gold.Then trusted
+              <a href="https://hindustangoldcompany.com/gold-buyers">
+                gold buyers</a>
+              with quick payment
+            </p>
+          </div>
+        </div>
+
+        <div class="col-xs-4 col-md-4 col-sm-4">
+          <div class="text-center">
+            <img class="footer-bottom_logo" alt="Hindustan Gold Company"
+              src="https://res.cloudinary.com/hindutan-gold-company/image/upload/c_scale,f_auto,q_auto,w_180,h_150/v1588561171/hgc_logo_gtfcyd.png" /><br />
+            <span class="__copy"><a class="__dev" href="/">HINDUSTAN GOLD COMPANY</a> <br />
+              © Copyrights 2022 ISO 9001 – 2015 Certified Company. <br />
+              All Rights Reserved.</span><br />
+
+            <i class="fa fa-envelope"></i>
+            <a style="text-decoration: none" href="mailto:info@hindustangoldcompany.com">
+              info@hindustangoldcompany.com</a>
+            <br />
+            <p>Follow us :</p>
+
+            <div class="text-center text-white">
+              <a href="https://www.facebook.com/hindustangold" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-facebook-f"></i></a>
+
+              <a href="https://twitter.com/hindustangoldc1" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-twitter"></i></a>
+
+              <a href="https://in.pinterest.com/cmmhgc/_saved/" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-pinterest"></i></a>
+
+              <a href="https://www.instagram.com/hindustan_gold_company/?hl=en" target="_blank"
+                rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+
+              <a href="https://www.linkedin.com/company/82327356/admin/" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-linkedin-in"></i></a>
+
+              <a href="https://www.youtube.com/channel/UCO8nW4-OC6QxSU65XshDVMw/featured" target="_blank"
+                rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+
+              <a href="https://wa.me/919741637635" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-4 col-md-4 col-sm-4">
+          <div class="text-center">
+            <a href="tel:08088550033" class="nav-link" style="text-decoration: none; font-size: 41px"><i
+                class="fa fa-phone" style="transform: rotate(90deg)"></i>
+              8088550033</a>
+            <img class="footer-bottom_scanner" alt="Hinustan Gold Company"
+              src="{{ url_for('static', filename='img/HGC_qrcode_33808290.svg') }}" /><br />
+            <i class="fa fa-map-marker text-danger"></i> #24 3rd floor RK
+            Terminus Ganga Nagar Bellary Main Road Bangalore – 560032<br />
+            <br />
+            <a target="_blank" href="/terms/">Terms & Conditions</a>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="row">
+        <div class="copyrights">
+          Copyright © 2024
+          <span>
+            <a target="_blank" href="https://hindustangoldcompany.com/">
+              <b> Hindustan Gold Company</b></a>
+          </span>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</footer>
+
+{% endblock %}

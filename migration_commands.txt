@@ -1,0 +1,17 @@
+######################### development commands ######################
+
+FLASK_ENV="development" flask db migrate -m "Initial migration."
+FLASK_ENV="development" flask db upgrade                        
+
+FLASK_ENV="development" flask db stamp head
+FLASK_ENV="development" flask db migrate
+FLASK_ENV="development" flask db upgrade
+
+######################### production commands ######################
+
+FLASK_ENV="production" flask db migrate -m "Initial migration."
+FLASK_ENV="production" flask db upgrade                    
+
+FLASK_ENV="production" flask db stamp head
+FLASK_ENV="production" flask db migrate
+FLASK_ENV="production" flask db upgrade

@@ -1,0 +1,257 @@
+{% extends "home.html" %}
+{% block main %}
+
+<section id="Home9" class="contactUs desk">
+  <div class="overlay"></div>
+
+  <a href="https://wa.me/+919741637635" class="" target="_blank">
+    <div class="float">
+        <i class="fab fa-whatsapp my-float" target="_blank" rel="noopener noreferrer"></i>
+    </div>
+    <h1 class="text-center float1">
+        Need Help?
+    </h1>
+  </a>
+
+  <div class="container" style="position:relative;z-index: 1;">
+    <div class="row ">
+      <div class="col-md-6 col-lg-6">
+        <h1 class="heading">Contact Us</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="rel contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contact-us">
+          <h3 class="section-heading">Have Something in Mind? We Are Here</h3>
+          <p class="para">Have anything in mind you want to ask us, feel free to contact us. <a href="/">Hindustan gold company</a> is
+            available 24*7 for your service. We will try our <a href="/services/best-gold/">best</a> to help you asap.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form id="contact_form" method="post" onsubmit="return showOTPModal()">
+          <span class="label">* Your Full Name:</span>
+          <div class="form-group input-wrp">
+            <input class="form-control" placeholder="Full name" name="name" type="text" required>
+            <span class="text-danger"></span>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <span class="label">* Your Email Address:</span>
+              <div class="form-group input-wrp">
+                <input class="form-control" placeholder="Email address" name="email" type="text" inputmode="email"
+                  x-inputmode="email" required>
+                <span style="color:red;"></span>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <span class="label">* Your Phone Number:</span>
+              <div class="form-group input-wrp">
+                <input class="form-control" placeholder="Phone" name="phone" id="phone" type="text" inputmode="tel"
+                  x-inputmode="tel" required>
+                <span class="text-danger"></span>
+              </div>
+            </div>
+          </div>
+
+          <span class="label">* Choose Subject:</span>
+          <div class="form-group input-wrp">
+            <select name="subject" class="form-select" required>
+              <option value="">Please Choose Subject</option>
+              <option value="Complaint">Complaint</option>
+              <option value="Franchise">Franchise</option>
+              <option value="Enquiry">Enquiry</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="text-danger"></span>
+          </div>
+          <span class="label">* Write Your Message Here:</span>
+          <div class="form-group input-wrp">
+            <textarea class="form-control" placeholder="Explain your message" name="message" required></textarea>
+            <span class="text-danger"></span>
+          </div>
+          <div class="form-group input-wrp">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <div class="form__note"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTP Modal -->
+<div id="otpModal" class="otp-modal">
+  <div class="otp-modal-content">
+    <h2>Verify Phone Number</h2>
+    <p>We have sent an OTP to your phone number. Please enter it below:</p>
+    <input type="text" id="otp-input" placeholder="Enter OTP">
+    <div class="button-container">
+      <button onclick="verifyOTP()">Verify</button>
+      <button class="btn-cancel" onclick="closeModal()" style="
+    background-color: #d48007;">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<section id="need-franchise">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="row">
+          <div class="col-md-6 offset-md-1">
+            <h2 class="section-heading">Need Franchise of <small>HINDUSTAN GOLD COMPANY</small></h2>
+            <ul class="list-items">
+              <li>Benefits
+                <ul>
+                  <li>A brand that is trusted</li>
+                  <li>Ease to Earn</li>
+                  <li>Complete Infrastructure Guidance</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS to style and center the modal -->
+<style>
+  .otp-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .otp-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .otp-modal-content h2 {
+    margin-bottom: 15px;
+  }
+
+  .otp-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #218838;
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
+
+  .button-container button {
+    margin-right: 10px; /* Add space between buttons */
+  }
+
+  .btn-class {
+    background-color: red !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  /* Optionally, remove margin from the last button */
+  .button-container button:last-child {
+    margin-right: 0;
+  }
+</style>
+
+<!-- JavaScript to handle modal display and OTP verification -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('otpModal').style.display = 'none';
+  });
+  function showOTPModal() {
+    const phoneNumber = document.getElementById('phone').value;
+
+
+    // Simulate sending the phone number to backend to send OTP
+    fetch('/verify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        phone: phoneNumber ,
+      }),
+    }).then(response => response.json())
+      .then(data => {
+        
+        if (data.success) {
+          // Show the OTP modal
+          document.getElementById('otpModal').style.display = 'flex';
+        } else {
+          alert('Failed to send OTP. Please try again.');
+        }
+      });
+
+    // Prevent form from submitting immediately
+    return false;
+  }
+
+  function verifyOTP() {
+    const otp = document.getElementById('otp-input').value;
+
+    // Simulate verifying OTP
+    fetch('/verify-otp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ otp: otp }),
+    }).then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('Phone number verified!');
+          document.getElementById('otpModal').style.display = 'none'; // Hide the modal
+          document.getElementById('contact_form').submit(); // Submit the form
+        } else {
+          alert('Invalid OTP. Please try again.');
+        }
+      });
+  }
+
+  function closeModal() {
+    document.getElementById("otpModal").style.display = "none";
+  }
+</script>
+
+{% endblock %}

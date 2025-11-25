@@ -1,0 +1,4 @@
+flask_login
+python-dotenv
+pymysql
+flask-caching

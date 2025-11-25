@@ -1,0 +1,13 @@
+nohup: ignoring input
+[2025-11-11 23:19:56 +0530] [8159] [INFO] Starting gunicorn 23.0.0
+[2025-11-11 23:19:56 +0530] [8159] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-11-11 23:19:56 +0530] [8159] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-11-11 23:19:57 +0530] [8159] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-11-11 23:19:57 +0530] [8159] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-11-11 23:19:58 +0530] [8159] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-11-11 23:19:58 +0530] [8159] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-11-11 23:19:59 +0530] [8159] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-11-11 23:19:59 +0530] [8159] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-11-11 23:20:00 +0530] [8159] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2025-11-11 23:20:00 +0530] [8159] [ERROR] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2025-11-11 23:20:01 +0530] [8159] [ERROR] Can't connect to ('127.0.0.1', 8000)

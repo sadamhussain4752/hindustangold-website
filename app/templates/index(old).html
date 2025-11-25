@@ -1,0 +1,849 @@
+{% extends "home_only.html" %} {% block main %}
+
+
+<section id="Home" class="main-page">
+
+    <!-- whatsapp integration -->
+
+    <!-- <button id="whatsapp-btn">Chat on WhatsApp</button> -->
+    <a href="https://wa.me/+919741637635" class="" target="_blank">
+        <div class="float">
+            <i class="fab fa-whatsapp my-float" target="_blank" rel="noopener noreferrer"></i>
+        </div>
+        <h1 class="text-center float1">
+            Need Help?
+        </h1>
+    </a>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" aria-label="Slide 5"></button> -->
+            <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="5" aria-label="Slide 6"></button> -->
+            <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="6" aria-label="Slide 7"></button> -->
+        </div>
+        <div class="carousel-inner">
+            <!-- <div class="carousel-item active">
+                <div class="container">
+                </div>
+                <img loading="lazy" src="{{ url_for('static', filename='img/HGC_Chritmas2022.png') }}" class="d-block w-100" alt="India no 1 Gold Company">
+            </div> -->
+
+            <!-- <div class="carousel-item active">
+                
+                <img loading="lazy" src="{{ url_for('static', filename='img/festival_banners/HGC_Eid_al_adha_2023.png') }}"  alt="Eid Al Adha banner" style="object-fit: initial;">
+            </div> -->
+
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="banner-txt">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-8 text-left">
+                                <h3 class="heading">India’s #1 Gold Buyers</h3>
+                                <button type="button" class="btn btn-default check_price_btn" data-title="Gold"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" name="button">Calculate Gold
+                                    Price</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="{{ url_for('static', filename='img/Gold-Buyers.webp') }}" class="d-block w-100"
+                    alt="Best gold buyers in bangalore" style="object-position: top;">
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="banner-txt">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-8 text-left">
+                                <h6 class="heading">Jewellery Buyers</h6>
+                                <!-- jewellery buyers near me link changed to gold buyers  -->
+                                <button type="button" class="btn btn-default check_price_btn"
+                                    onclick="window.location.href='/blog/gold-buyers-near-me/'" name="button">Jewellery
+                                    Buyers</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img loading="lazy" src="{{ url_for('static', filename='img/jewellery_buyers.webp') }}"
+                    class="d-block w-100" alt="Gold buyers in bangalore" style="object-position: top;">
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="banner-txt">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-8 text-left">
+                                <h6 class="heading">Door Step Service</h6>
+                                <button type="button" class="btn btn-default check_price_btn"
+                                    onclick="window.location.href='/contact'" name="button">Contact us</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img loading="lazy" src="{{ url_for('static', filename='img/slider4.webp') }}" class="d-block w-100"
+                    alt="Best jewellery buyers in bangalore" style="object-position: top;">
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="banner-txt">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-8 text-left">
+                                <h6 class="heading">Trusted Gold Buying Company</h6>
+                                <button type="button" class="btn btn-default check_price_btn" data-title="Gold"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" name="button">Calculate Gold
+                                    Price</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img loading="lazy" src="{{ url_for('static', filename='img/slider62.webp') }}" class="d-block w-100"
+                    alt="Best gold buyers in bangalore" style="object-position: top;height:100%;">
+            </div>
+
+            <!-- <div class="carousel-item">
+            <div class="container">
+                <div class="banner-txt">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-8 col-8 text-left">
+                            <h6 class="heading">Free Purity Check</h6>
+                            <button type="button" class="btn btn-default check_price_btn" onclick="window.location.href='tel:08088550033'" name="button">Call Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img loading="lazy" src="{{ url_for('static', filename='img/slider3.webp') }}" class="d-block w-100" alt="Free Purity Check" style="object-position: top;">
+        </div> -->
+            <!-- <div class="carousel-item">
+            <div class="container">
+                <div class="banner-txt">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-8 col-10 text-left">
+                            <h6 class="heading">Release Pledged Gold</h6>
+                            <button type="button" class="btn btn-default check_price_btn" onclick="window.location.href='tel:08088550033'" name="button">Call Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img loading="lazy" src="{{ url_for('static', filename='img/slider61.webp') }}" class="d-block w-100" alt="Instant Cash for Gold">
+        </div> -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+</section>
+<section id="prices">
+    <div class="row mx-auto">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6 p-0">
+            <h3 class="price-title">Today's Gold price <a href="/check-gold-price"
+                    class="btn btn-default check_price_btn">Check Today's Gold Price</a></h3>
+        </div>
+    </div>
+</section>
+
+{% include 'sections/about_us_section_0.html' %}
+<!-- Youtube Modal -->
+<!-- <div class="modal fade" id="youtubeVideo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="youtube-frame">
+                    <iframe style="overflow:hidden;" allowfullscreen="allowfullscreen" src="https://www.youtube-nocookie.com/embed/SuLooYYNoDo?&autohide=1&fs=1&rel=0&hd=1&wmode=transparent&enablejsapi=1&html5=1"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+{% include 'sections/section_online_prices.html' %} {% include 'sections/about_us_section_1.html' %} {% include
+'sections/about_us_section_2.html' %}
+
+
+<section id="number">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 text-center">
+                <h4 class="h1 ">89</h4>
+                <p class="p4 ">Branches</p>
+            </div>
+            <div class="col-lg-2 col-md-3 text-center">
+                <h4 class="h1 ">3</h4>
+                <p class="p4 ">States</p>
+            </div>
+            <div class="col-lg-3 col-md-2 pd-l-3 text-center">
+                <h4 class="h1 ">50</h4>
+                <p class="p4 ">Cities</p>
+            </div>
+            <div class="col-lg-3 col-md-3 text-center">
+                <h4 class="h1 ">484039</h4>
+                <p class="p4">Satisfied Customers</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="steps">
+    <h2 class="section-heading text-center mt-0">Sell Your Gold With Ease</h2>
+    <div class="container">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="badge bg-danger">Step 1</span>
+                            <h3>Walk-in with your Gold</h3>
+                            <p>If you want to Sell Gold, walk in to <a
+                                    href="https://hindustangoldcompany.com/branches">our nearest branch</a>. If you want
+                                us to help you release pledged gold, walk-in with the pledge slip and we are here to
+                                help you
+                                release your Gold.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" flex-img-box">
+                                <img loading="lazy" src="{{ url_for('static', filename='img/step1.webp') }}"
+                                    alt="Cash for gold near me">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="badge bg-danger">Step 2</span>
+                            <h3>Purity Check</h3>
+                            <p>Hindustan Gold Company is only Gold Buyer Company that gives you the best price for the
+                                Gold based on its purity. Check purity of your GOLD for FREE. We are transparent on
+                                valuation of your GOLD purity. We use latest technology
+                                machine that gives 100% purity for your gold ornaments.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" flex-img-box">
+                                <img loading="lazy" src="{{ url_for('static', filename='img/step2.webp') }}"
+                                    alt="Step 2" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="badge bg-danger">Step 3</span>
+                            <h3>Sell Gold at Online Price</h3>
+                            <p>Sell Gold to get Instant Cash. Hindustan Gold Company helps you get the best Online price
+                                that, Market can never match. We understand the needs and cater you. We have won the
+                                trust of millions of customers during our 20 years
+                                journey.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" flex-img-box">
+                                <img loading="lazy" src="{{ url_for('static', filename='img/step3.webp') }}"
+                                    alt="Step 3" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="service">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-6">
+                <h2 class="section-heading2">Why Hindustan Gold Company</h2>
+                <ul class="list-items">
+                    <li>Trusted Brand</li>
+                    <li>Honesty and transparent on valuation
+                        <ul>
+                            <li>Gold Purity Checking Method</li>
+                            <li>Visibility on Your Gold Weight</li>
+                            <li>Sell Gold at an Online Price</li>
+                        </ul>
+                    </li>
+                    <li>Best price for your Gold</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="value-asset">
+    <div class="container">
+        <h2 class="mobile-screen-heading1">Valuate Your Asset Worth
+            <br>
+        </h2>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+
+                <ul class="list-items">
+                    <li>When it comes to selling Jewellery, Hindustan Gold Company is one of the market leaders and
+                        pioneers with the concept of buying Jewellery against instant Cash, in a secure professional
+                        environment.
+                        <br /><br />We at HINDUSTAN GOLD COMPANY use modern and reliable technologies to check the
+                        purity of gold. We ensure your Gold is valuated without any hidden charges. This is the only
+                        place to give you the Worth PRICE for
+                        the Valuable Gold you own.
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-default check_price_btn" data-title="Gold" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" name="button">Calculate Gold Price</button>
+            </div>
+            <div class="col-md-6">
+                <div class=" flex-img-box">
+                    <img loading="lazy" class="image_h4" src="{{ url_for('static', filename='img/side2.webp') }}"
+                        alt="Pledged gold" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="strip-section" class="mt-heading">
+    <div class="glitter-bg">
+
+    </div>
+    <div class="container">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="mobile-screen-heading2"> Meet Us @ </h2>
+            <p class="para-meet">
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-rt-nagar/
+                ">Gold Buyers in Bengaluru</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-rt-nagar/
+                ">Gold Buyers in RT Nagar</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-yelahanka/
+                ">Gold Buyers in Yelahanka</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-majestic/
+                ">Gold Buyers in Majestic</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-yeswanthpur/
+                ">Gold Buyers in Yeshwanthpur</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-chikkabalapur/
+                ">Gold Buyers in Chikkaballapur</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-mysore/
+                ">Gold Buyers in Mysore </a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-tumkur/
+                ">Gold Buyers in Tumkuru</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-hassan/
+                ">Gold Buyers in Hassan </a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-mangalore/
+                ">Gold Buyers in Mangalore</a>,&nbsp;
+
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-shivamogga/
+                ">Gold Buyers in Shivamoga</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-davanagere/
+                ">Gold Buyers in Davanagere</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-sindhanur/
+                ">Gold Buyers in Sindhanur</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-bellary/
+                ">Gold Buyers in Bellary</a>,&nbsp;
+                <a href="https://hindustangoldcompany.com/branches/hindustan-gold-company-gulbarga/
+                ">Gold Buyers in Gulbarga</a>,&nbsp;
+
+            </p>
+        </div>
+    </div>
+    </div>
+</section>
+<section id="comments">
+    <div class="container ">
+        <h2 class="section-heading text-center">Clients Say about Hindustan Gold Company</h2>
+        <p class="subheading text-center">HINDUSTAN GOLD COMPANY has millions of happy customers. Read what some of our
+            customers say about us.</p>
+        <div class="row ">
+            <div class="col-md-12 col-lg-10 offset-lg-1">
+                <div id="carouselExampleFade" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner comments-block">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/profile.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Rajesh
+                                        <span class="designation">Team Head @ Wipro</span>
+                                    </h6>
+                                    <p class="p7">Best place to sell our gold we got good price 100% Trusted Gold Buying
+                                        Company.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/woman.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Kiran
+                                        <span class="designation">Marketing Manager@ Reliance</span>
+                                    </h6>
+                                    <p class="p7">One Of The Best Out Let To Sell Our Gold Jewelry Or Any Other Metals
+                                        Friendly And Professional Staff.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/profile.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Kamran Maqbool
+                                        <span class="designation">CEO Technologies</span>
+                                    </h6>
+                                    <p class="p7">Certified best gold buyers offers spot cash for gold and release
+                                        pledged gold @ current market price. India's No.1 Gold buyers to Sell gold.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/woman.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Sonam Kapoor
+                                        <span class="designation">Accenture</span>
+                                    </h6>
+                                    <p class="p7">I recently visited Hindustan Gold Company they offered me good price
+                                        for gold and gave spot cash.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/woman.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Aliya Noorain
+                                        <span class="designation">Mphasis</span>
+                                    </h6>
+                                    <p class="p7">I am very much happy to sell my gold in Hindustan Gold Company they
+                                        gave me good price and good service.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/profile.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Chandan Kumar
+                                        <span class="designation">Omega</span>
+                                    </h6>
+                                    <p class="p7">Very good company and well satisfied with price amazing company and
+                                        best place to sell gold.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/woman.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Divya Rani
+                                        <span class="designation">Concentric</span>
+                                    </h6>
+                                    <p class="p7">They provide good service friendly staff and very transparent and they
+                                        wont make hurry they give time to make decision and gave for best price.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/woman.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Shanaya Khan
+                                        <span class="designation">ANZ</span>
+                                    </h6>
+                                    <p class="p7">Hindustan Gold Company is the one of the trustworthy company, I sold
+                                        my gold here they provided me with best price and gave spot cash for gold, Best
+                                        Company, Thank You.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/profile.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Syed Arman
+                                        <span class="designation">24/7</span>
+                                    </h6>
+                                    <p class="p7">Good service, friendly staff, Hindustan gold company provided me a
+                                        best price in difficult time i am so happy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class=" col-lg-3 col-md-3 ">
+                                    <div class="img2 d-flex ">
+                                        <img loading="lazy" src="{{ url_for('static', filename='img/woman.webp') }}"
+                                            alt="User" />
+                                    </div>
+                                </div>
+                                <div class=" col-lg-8 col-md-8">
+                                    <h6 class="cmh6">Divya Agarwal
+                                        <span class="designation">Transact Global</span>
+                                    </h6>
+                                    <p class="p7">I am so happy that i sold my gold in Hindustan Gold Company thank u so
+                                        much to them they gave me best and highest paid.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="5"
+                            aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="6"
+                            aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="7"
+                            aria-label="Slide 8"></button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section id="need-franchise">
+    <div class="overlay">
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="row">
+                    <div class="col-md-6 offset-md-1">
+                        <h2 class="section-heading">Need Franchise of <small>HINDUSTAN GOLD COMPANY</small></h2>
+                        <ul class="list-items">
+                            <li>Benefits
+                                <ul>
+                                    <li>A brand that is trusted</li>
+                                    <li>Ease to Earn</li>
+                                    <li>Complete Infrastructure Guidance</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="container" style="margin-bottom: 65px;">
+    <h4 class="text-center" style="margin-top: 25px; font-size: 40px;">Frequently Asked Questions</h4>
+    <div class="accordion">
+        <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false">
+                <span class="accordion-title">How does Hindustan Gold Company determine the value of my gold?</span>
+                <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+                <p>
+                    At Hindustan Gold Company, we use state-of-the-art equipment to accurately
+                    assess the purity and weight of your gold. Our experts then calculate its value
+                    based on the current market price, ensuring you receive the best possible
+                    offer for your gold.
+                </p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button id="accordion-button-2" aria-expanded="false">
+                <span class="accordion-title">Is the process of selling gold to Hindustan Gold Company safe and
+                    transparent?</span>
+                <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+                <p>
+                    Yes, at Hindustan Gold Company, we prioritize safety and transparency. Our
+                    evaluation process is conducted in front of you, and we provide a detailed
+                    explanation of the assessment and pricing. We ensure that you feel confident
+                    and informed throughout the transaction.
+                </p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+                <span class="accordion-title">How quickly can I get cash for gold at Hindustan Gold Company?</span>
+                <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+                <p>
+                    At Hindustan Gold Company, we strive to make the process as quick and
+                    convenient as possible. Once the evaluation is complete and you accept our
+                    offer, you will receive instant cash for your gold, ensuring a seamless
+                    and efficient experience.
+                </p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button id="accordion-button-4" aria-expanded="false">
+                <span class="accordion-title">Do I need to bring any documents when sell gold to Hindustan Gold
+                    Company?</span>
+                <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+                <p>
+                    Yes, when sell gold to Hindustan Gold Company, you need to bring a valid
+                    government-issued ID, such as an Aadhar card, passport, or driver's license.
+                    This helps us comply with legal requirements and ensures a secure transaction.
+                </p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button id="accordion-button-5" aria-expanded="false">
+                <span class="accordion-title">Can I sell damaged or broken gold jewelry to Hindustan Gold
+                    Company?</span>
+                <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+                <p>
+                    Absolutely! Hindustan Gold Company accepts gold in any condition,
+                    including damaged or broken jewelry. We evaluate the purity and weight
+                    of the gold content, offering you a fair price regardless of its condition.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    const items = document.querySelectorAll('.accordion button');
+
+    function toggleAccordion() {
+        const itemToggle = this.getAttribute('aria-expanded');
+
+        for (i = 0; i < items.length; i++) {
+            items[i].setAttribute('aria-expanded', 'false');
+        }
+
+        if (itemToggle == 'false') {
+            this.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    items.forEach((item) => item.addEventListener('click', toggleAccordion));
+
+
+
+
+</script>
+
+
+
+{# {% include 'form.html' %} #}
+
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const allCookies = document.cookie;
+
+
+    // Function to retrieve a specific cookie by name
+    function getCookie(name) {
+        const cookies = document.cookie.split('; ');
+        for (const cookie of cookies) {
+            const [cookieName, cookieValue] = cookie.split('=');
+            if (cookieName === name) {
+                return cookieValue;
+            }
+        }
+        return null; // Cookie not found
+    }
+</script>
+<!-- <script>
+    const userCookie = getCookie('user');
+    console.log("cookiedata:",userCookie);
+
+
+            $(document).ready(function () {
+            if (userCookie != "HindustanGold"){
+                $('#overlay').show();
+            $('#myModal').modal('show');
+
+            $('#closeModal').click(function () {
+                closeModal();
+            });
+
+            $('#overlay').click(function () {
+                closeModal();
+            });
+
+            $('.modal-content').click(function (e) {
+                e.stopPropagation();
+            });
+
+            function closeModal() {
+                $('#overlay').hide();
+                $('#myModal').modal('hide');
+            }
+            }
+        })
+</script> -->
+
+<script>
+    const userCookie = getCookie('user');
+    console.log("cookiedata:", userCookie);
+
+    $(document).ready(function () {
+        if (userCookie != "HindustanGold") {
+            // Delay the modal display by 5 seconds
+            setTimeout(function () {
+                $('#overlay').show();
+                $('#myModal').modal('show');
+            }, 3000);
+
+            $('#closeModal').click(function () {
+                closeModal();
+            });
+
+            $('#overlay').click(function () {
+                closeModal();
+            });
+
+            $('.modal-content').click(function (e) {
+                e.stopPropagation();
+            });
+
+            function closeModal() {
+                $('#overlay').hide();
+                $('#myModal').modal('hide');
+            }
+        }
+    });
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    // Function to animate counting
+    function animateCounting(element, targetValue) {
+        $({ Counter: 0 }).animate({
+            Counter: targetValue
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function () {
+                $(element).text(Math.ceil(this.Counter));
+            }
+        });
+    }
+
+    // Function to handle intersection changes
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Target section is now visible, start counting animation
+                animateCounting('.col-lg-3 h4', 89);
+                animateCounting('.col-lg-2 h4', 3);
+                animateCounting('.col-lg-3:nth-child(3) h4', 50);
+                animateCounting('.col-lg-3:last-child h4', 484039);
+            }
+        });
+    }
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+
+    // Target the number section
+    const numberSection = document.getElementById('number');
+
+    // Observe the target section
+    observer.observe(numberSection);
+</script>
+
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Vacancy Information</h3>
+                    </div>
+                    <form method="post" action="{{ url_for("careers.create") }}">
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Select Branch</label>
+                                            <select class="form-control" name="branch_id" id="branch_id" required>
+                                                <option value="" vt="">Select Branch</option>
+                                                {% for branch in branches %}
+                                                <option value="{{ branch.id }}"> {{ branch.branch.name}} </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Position</label>
+                                            <input class="form-control" type="text" name="name" id="name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Salary</label>
+                                            <input class="form-control" type="text" name="salary" id="salary" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Skills</label>
+                                            <textarea class="form-control" type="text" name="skills" id="skills"
+                                                rows="6" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Experience</label>
+                                            <input class="form-control" type="text" name="experience" id="experience" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Qualifications</label>
+                                            <input class="form-control" type="text" name="qualifications" id="qualifications" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Job Type</label>
+                                            <input class="form-control" type="text" name="job_type" id="job_type" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Job Timings</label>
+                                            <input class="form-control" type="text" name="job_timings" id="job_timings" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contact No</label>
+                                            <input class="form-control" type="text" name="contact_no" id="contact_no" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contact Email</label>
+                                            <input class="form-control" type="text" name="contact_email" id="contact_email" required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="container">
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="">Meta Info list</h3>
+                            <b> Note: only todays meta-info will showed here</b>
+
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <table class="table table-bordered table-hover dataTable dtr-inline" id="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Page
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Keywords
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for item in list_of_meta %}
+                                <tr>
+                                    <td>
+                                        {{ item.page}}
+                                    </td>
+                                    <td>
+                                        {{ item.title}}K
+                                    </td>
+                                    <td>
+                                        {{ item.keywords }}
+                                    </td>
+                                    <td>
+                                        {{ item.description}}
+
+                                    </td>
+                                    <td>
+                                        <a href="{{ url_for("seo.edit", id=item.id) }}"><i class="fa fa-edit"></i>Edit</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+{% endblock %}

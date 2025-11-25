@@ -1,0 +1,160 @@
+{% extends "backend/base_template.html" %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Branch</h3>
+                    </div>
+                    <form method="post" action="{{ url_for('branch.create') }}" enctype="multipart/form-data">
+                        <input type="hidden" id="cities_json" value="{{ cities_list }}" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card-body">
+
+                                    <div class="form-group">
+                                        <label>States</label>
+                                        <select class="form-control" name="state_id" id="state_id" required>
+                                            <option value="" vt="">Select State</option>
+                                            {% for state in states%}
+                                            <option value="{{ state.id }}">{{ state.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <select class="form-control" name="city_id" id="city_id" required>
+                                            <option value="" vt="">Select City</option>
+                                        </select>
+                                    </div>                              
+                                    <div class="form-group">
+                                        <label>Pincode</label>
+                                        <input type="number" name="pincode" placeholder="Enter Branch Pincode"
+                                            class="form-control" id="pincode" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <textarea type="text" name="address" placeholder="Enter Branch Address"
+                                            class="form-control" id="address" required=""> </textarea>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label>Images</label>
+                                        <!-- <input type="file" name="files[]"  class="form-control" id="email" required=""  multiple/> -->
+                                        <input type="file" class="form-control" name="files[]" multiple="true" autocomplete="off" required>
+                                    </div>                       
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">                                
+                                    <div class="form-group">
+                                        <label>Branch Name</label>
+                                        <input type="text" name="name" placeholder="Enter Branch Name"
+                                            class="form-control" id="branch" required="">
+                                    </div>  
+                                    <div class="form-group">
+                                        <label>Branch Discription</label>
+                                        <textarea type="text" name="description" placeholder="Enter Branch Address"
+                                            class="form-control" id="description" required=""> </textarea>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label>Branch Gmap locations</label>
+                                        <input type="text" name="gmap_location" placeholder="Enter Branch Gmap locations"
+                                            class="form-control" id="gmap_location" required="">
+                                    </div>                                                             
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="number" name="contact_no" placeholder="Enter Branch Phone"
+                                            class="form-control" id="contact_no" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="email" placeholder="Enter Branch Email"
+                                            class="form-control" id="email" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Map Location</label>
+                                        <!-- <input type="file" name="files[]"  class="form-control" id="email" required=""  multiple/> -->
+                                        <input type="file" class="form-control" name="map_location" multiple="true" autocomplete="off" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3 class="">Branch list</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-body table-responsive p-0">
+                    <table class="table-bordered " id="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    SL.No
+                                </th>
+                                <th>
+                                    BranchName
+                                </th>
+                                <th>
+                                    City / State / Pincode
+                                </th>
+                                <th>
+                                    Contact No
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for item in branch_relations %}
+                            <tr>
+                                <td>
+                                    {{ item.id}}
+                                </td>
+                                <td>
+                                    {{ item.branch.name }}
+                                </td>
+                                <td>
+                                    {{ item.city.name }} / {{ item.state.name }} / {{ item.branch.pincode }}
+                                </td>
+                                <td>
+                                    {{ item.branch.contact_no }}
+                                </td>
+                                <td>
+                                    {{ item.branch.email }}
+                                <td>
+                                    <a href="#"><i class="fa fa-edit"></i>Edit</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+{% endblock %}
